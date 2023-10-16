@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+main{
+    min-height: calc(100vh - 100px) !important;
+}
+header{
+    .logo{
+        width: 176px;
+        height: 88px;
+    }
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+h1{
+    text-align: center;
+}
+.company-text {
+    p{
+        float: right;
+    }
+    img{
+        width: 300px;    
+    }
+
+}
+.contact-form{
+    display: flex;
+    justify-content: center;
+    input{
+        width: 300px;
+        padding: 10px !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+    }
+    textarea{
+        padding: 10px !important;
+
+    }
+    button{
+        padding: 10px 15px;
+        width: 200px;
+        background-color: black;
+        color: white;
+    }
+
+}
+.carousel-item>img{
+    width: 80% !important;
+    margin: 0 auto;
+}
+.card-img-top{
+    width: 100% !important;
+}
+.filter-panel{
+    display: flex;
+    align-items: start;
+}
+.editInputs{
+    display: none;
+}
+.show{
+    display: block !important; 
+}
