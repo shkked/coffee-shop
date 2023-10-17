@@ -5,7 +5,56 @@
 }
 
 main {
-  min-height: calc(100vh - 100px) !important;
+  min-height: calc(100vh - 356px) !important;
+}
+
+@font-face {
+  font-family: "Charter";
+  src: url("../assets/fonts/charter/otf/Charter-Bold-Italic.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Charter";
+  src: url("../assets/fonts/charter/otf/Charter-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Charter";
+  src: url("../assets/fonts/charter/otf/Charter-Italic.otf");
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Charter";
+  src: url("../assets/fonts/charter/otf/Charter-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+}
+.nav-link-font {
+  font-family: "Charter";
+  font-weight: 700;
+  line-height: normal;
+  font-size: 15px;
+  line-height: normal;
+}
+
+body {
+  background-color: #306342;
+}
+
+.top-header {
+  min-height: 65px;
+}
+
+.main-header .nav li:nth-child(n):not(:last-child) {
+  margin-right: 35px;
+}
+
+header .logo {
+  width: 176px;
+  height: 88px;
 }
 
 section {
@@ -70,4 +119,9 @@ h1 {
 
 .show {
   display: block !important;
+}
+
+footer {
+  height: 356px;
+  background-color: black;
 }
