@@ -1,3 +1,5 @@
+@import "_vars";
+
 *{
     padding: 0;
     margin: 0;
@@ -5,6 +7,14 @@
 }
 main{
     min-height: calc(100vh - 356px) !important;
+}
+.container-user{
+    max-width: 1000px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 // Charter Bold Italic
 @font-face {
@@ -17,7 +27,7 @@ main{
 @font-face {
     font-family: "Charter";
     src: url('../assets/fonts/charter/otf/Charter-Bold.otf');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
 }
 // Charter Italic
@@ -34,6 +44,23 @@ main{
     font-style: normal;
     font-weight: normal;
 }
+// Custom classses
+.my-btn{
+    border-radius: 10px;
+    background: #9A9370;
+}
+.amiko-font{
+    font-family: 'Amino', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: white;
+}
+.h2-title{
+    font-size: 24px !important;
+    color: white;
+}
 .nav-link-font{
     font-family: "Charter";
     font-weight: 700;
@@ -41,6 +68,8 @@ main{
     font-size: 15px;
     line-height: normal;
 }
+
+
 body{
     background-color: #306342;
 }
@@ -50,7 +79,7 @@ body{
 .main-header{
     .nav{
         li:nth-child(n):not(:last-child){
-            margin-right: 35px;
+            margin-right: 25px;
         }
     }
 }
@@ -60,18 +89,59 @@ header{
         height: 88px;
     }
 }
-section{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    &>div{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+.info-left, .info-right{
+    width: 48%;
+    min-height: 390px;
+    border-radius: 10px;
+}
+.info-right{
+    background: #9A9370;
+}
+.info-left{
+    background-color: white;
+    .my-btn{
+        width: 110px;
+        height: 35.009px;
     }
 }
 h1{
     text-align: center;
+}
+.card{
+    @extend .amiko-font;
+    color: black;
+    .card-title{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .card-text{
+        font-size: 13px;
+
+    }
+    .card-img-top{
+        width: 192px;
+        height: 192px;
+    }
+    .card-subtitle{
+        font-size: 11px;
+        font-weight: 400;
+        color: #808080;
+    }
+    .favorite{
+        position: relative;
+        background-color: #FFF;
+        
+    }
+}
+.filter-panel{
+    display: flex;
+    align-items: start;
+}
+.editInputs{
+    display: none;
+}
+.show{
+    display: block !important; 
 }
 .company-text {
     p{
@@ -103,23 +173,6 @@ h1{
         color: white;
     }
 
-}
-.carousel-item>img{
-    width: 80% !important;
-    margin: 0 auto;
-}
-.card-img-top{
-    width: 100% !important;
-}
-.filter-panel{
-    display: flex;
-    align-items: start;
-}
-.editInputs{
-    display: none;
-}
-.show{
-    display: block !important; 
 }
 footer{
     height: 356px;

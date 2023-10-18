@@ -1,5 +1,5 @@
-<header class="p-3 border-bottom top-header">
-    <div class="container">
+<header class="p-3 border-bottom top-header" style="border-bottom: 1px solid black !important">
+    <div class="container-user">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -10,7 +10,6 @@
 
 
         <?php if(isset($_COOKIE['role'])): ?>
-
 
           <div class="text-end">
             <p>Добро пожаловать, <span><?php echo $_COOKIE['userName']; ?></span></p>
@@ -42,7 +41,7 @@
     </div>
   </header>
 <header class="p-3 main-header">
-    <div class="container">
+    <div class="container-user">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/ground-black" class="d-flex align-items-center mb-2 mb-lg-0 me-5 text-white text-decoration-none">
           <img class="logo" src="/ground-black/assets/img/logo.png" alt="logo-website">
