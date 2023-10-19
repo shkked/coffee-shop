@@ -48,6 +48,10 @@ main{
 .my-btn{
     border-radius: 10px;
     background: #9A9370;
+    border-color: unset !important;
+    &:hover{
+        background: black;
+    }
 }
 .amiko-font{
     font-family: 'Amino', sans-serif;
@@ -68,8 +72,6 @@ main{
     font-size: 15px;
     line-height: normal;
 }
-
-
 body{
     background-color: #306342;
 }
@@ -110,13 +112,17 @@ h1{
 .card{
     @extend .amiko-font;
     color: black;
+    .container-card{
+        max-width: 290px;
+        margin: 0 auto;
+    }
     .card-title{
         font-size: 16px;
         font-weight: 700;
     }
     .card-text{
         font-size: 13px;
-
+        max-width: 80%;
     }
     .card-img-top{
         width: 192px;
@@ -131,6 +137,21 @@ h1{
         position: relative;
         background-color: #FFF;
         
+    }
+    
+    .card-ranges{
+        input[type="range"]::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -2px;
+            width: 0;
+            height: 3px;
+            background-color: black; /* Здесь можно изменить цвет */
+            transform: translateY(-50%);
+            transition: width 0.3s ease-in-out; /* Добавьте плавный переход */
+            z-index: -1; /* Добавить z-index: -1 */
+        }
     }
 }
 .filter-panel{

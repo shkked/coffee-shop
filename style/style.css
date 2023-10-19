@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -44,6 +45,10 @@ main {
 .my-btn {
   border-radius: 10px;
   background: #9A9370;
+  border-color: unset !important;
+}
+.my-btn:hover {
+  background: black;
 }
 
 .amiko-font, .card {
@@ -110,12 +115,17 @@ h1 {
 .card {
   color: black;
 }
+.card .container-card {
+  max-width: 290px;
+  margin: 0 auto;
+}
 .card .card-title {
   font-size: 16px;
   font-weight: 700;
 }
 .card .card-text {
   font-size: 13px;
+  max-width: 80%;
 }
 .card .card-img-top {
   width: 192px;
@@ -129,6 +139,18 @@ h1 {
 .card .favorite {
   position: relative;
   background-color: #FFF;
+}
+.card .card-ranges input[type=range]::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -2px;
+  width: 0;
+  height: 3px;
+  background-color: black; /* Здесь можно изменить цвет */
+  transform: translateY(-50%);
+  transition: width 0.3s ease-in-out; /* Добавьте плавный переход */
+  z-index: -1; /* Добавить z-index: -1 */
 }
 
 .filter-panel {

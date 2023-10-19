@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="./assets/script/range-bg.js"></script>
 </head>
 <body>
     <?php include ("./modules/header.php"); ?>
@@ -44,12 +45,20 @@
                     </div>
                   </div>
                 </div>
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: 12311</h6>
-        <h5 class="card-title">Эфиопия Иргачефф нат</h5>
-        <p class="card-text">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута</p>
-        <a href="#" class="btn btn-primary">Купить</a>
-      </div>
+                <div class="container-card">
+                  <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: 12311</h6>
+                      <h5 class="card-title">Эфиопия Иргачефф нат</h5>
+                      <p class="card-text">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута</p>
+                      <div class="card-ranges">
+                      <label for="toxic" class="form-label amiko-font card-subtitle" style="color: #070707;">Кислотность</label>
+                        <input type="range" class="form-range range-bg" id="toxic" value="80" disabled>
+                      <label for="disabledRange" class="form-label amiko-font card-subtitle" style="color: #070707;">Плотность</label>
+                        <input type="range" class="form-range" id="disabledRange" disabled>
+                      </div>
+                      <a href="#" class="btn btn-primary my-btn">Купить</a>
+                  </div>
+                </div>
     </div>
         </section>
 
