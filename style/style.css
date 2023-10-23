@@ -16,6 +16,7 @@ main {
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
+  height: 100%;
 }
 
 @font-face {
@@ -214,4 +215,33 @@ h1 {
 footer {
   height: 356px;
   background-color: black;
+  color: white;
+}
+footer h4 {
+  font-size: 15px;
+  font-weight: 700;
+}
+footer ul {
+  padding: 0 !important;
+}
+footer ul li {
+  list-style-type: none !important;
+}
+footer ul a {
+  color: white;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+footer .social-media {
+  margin-right: 300px;
+}
+footer .social-media a:not(:last-child) {
+  margin-right: 20px;
+}
+footer .header-footer h4 {
+  margin-bottom: 19px;
+}
+footer .header-footer ul > li:not(:last-child) {
+  margin-bottom: 16px;
 }

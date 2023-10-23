@@ -15,6 +15,7 @@ main{
     margin-right: auto;
     padding-right: 15px;
     padding-left: 15px;
+    height: 100%;
 }
 // Charter Bold Italic
 @font-face {
@@ -216,4 +217,35 @@ h1{
 footer{
     height: 356px;
     background-color: black;
+    color: white;
+    h4{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    ul{
+        padding: 0 !important;
+        li{
+            list-style-type: none !important;
+        }
+        a{
+            color: white;
+            text-decoration: none !important;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    .social-media{
+        margin-right: 300px;
+        a:not(:last-child){
+            margin-right: 20px;
+        }
+    }
+    .header-footer{
+        h4{
+            margin-bottom: 19px;
+        }
+        ul>li:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
 }
