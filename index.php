@@ -25,7 +25,7 @@
         </div>
         </section>
         <section>
-          <h2 class="mt-4 mb-4 h2-title nav-link-font">Часто покупают</h2>
+          <h2 class="h2-title nav-link-font">Часто покупают</h2>
           <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class="card" style="width: 19rem;">
                 <div class="ps-4 pt-4 pe-4">

@@ -56,7 +56,7 @@ main{
     }
 }
 .amiko-font{
-    font-family: 'Amino', sans-serif;
+    font-family: 'Amiko', sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -66,6 +66,8 @@ main{
 .h2-title{
     font-size: 24px !important;
     color: white;
+    margin-top: 48px;
+    margin-bottom: 48px;
 }
 .nav-link-font{
     font-family: "Charter";
@@ -247,5 +249,14 @@ footer{
         ul>li:not(:last-child){
             margin-bottom: 16px;
         }
+    }
+}
+.catalog{
+    h1{
+        color: #FFF;
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 48px;
+        margin-top: 48px;
     }
 }

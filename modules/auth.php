@@ -7,7 +7,7 @@ $userEmail = filter_var(trim($_GET['email']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_GET['pass']), FILTER_SANITIZE_STRING);
 $password = md5($password);
 
-$mass = $conn -> query("SELECT * FROM `users` WHERE `username` = '$userName' AND `email` = '$userEmail' AND `password` = '$password'");
+$mass = $conn -> query("SELECT * FROM `users` WHERE `users_name` = '$userName' AND `users_email` = '$userEmail' AND `users_password` = '$password'");
 $result = $mass -> fetch_assoc();
 print_r($mass);
 if($result){
@@ -18,4 +18,4 @@ if($result){
 }
 $conn -> close();
 
-header('Location: /php');
+header('Location: /ground-black');

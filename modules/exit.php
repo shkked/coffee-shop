@@ -4,4 +4,4 @@
     setcookie('userEmail', "", time() - 3600, '/');
     setcookie('role', "", time() - 3600, '/');
 
-    header('Location: /php');
+    header('Location: /ground-black');
