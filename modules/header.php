@@ -3,13 +3,13 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white nav-link-font">г.Москва 
+          <li><a href="#" class="nav-link px-2 text-black sub-header-font">г.Москва 
           <svg class="mb-1" xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
-            <path d="M6.98486 9.74365L0.344238 3.10303C-0.114746 2.64404 -0.114746 1.90186 0.344238 1.44775L1.44775 0.344238C1.90674 -0.114746 2.64893 -0.114746 3.10303 0.344238L7.81006 5.05127L12.5171 0.344238C12.9761 -0.114746 13.7183 -0.114746 14.1724 0.344238L15.2759 1.44775C15.7349 1.90674 15.7349 2.64893 15.2759 3.10303L8.63525 9.74365C8.18604 10.2026 7.44385 10.2026 6.98486 9.74365Z" fill="white"/>
+            <path d="M6.98486 9.74365L0.344238 3.10303C-0.114746 2.64404 -0.114746 1.90186 0.344238 1.44775L1.44775 0.344238C1.90674 -0.114746 2.64893 -0.114746 3.10303 0.344238L7.81006 5.05127L12.5171 0.344238C12.9761 -0.114746 13.7183 -0.114746 14.1724 0.344238L15.2759 1.44775C15.7349 1.90674 15.7349 2.64893 15.2759 3.10303L8.63525 9.74365C8.18604 10.2026 7.44385 10.2026 6.98486 9.74365Z" fill="black"/>
           </svg>
           </a></li>
-          <li class="ms-5"><a href="#" class="nav-link px-2 text-white nav-link-font">Как приготовить кофе?</a></li>
-          <li class="ms-5"><a href="#" class="nav-link px-2 text-white nav-link-font">Как выбрать кофе?</a></li>
+          <li class="ms-5"><a href="#" class="nav-link px-2 text-black sub-header-font">Как приготовить кофе?</a></li>
+          <li class="ms-5"><a href="#" class="nav-link px-2 text-black sub-header-font">Как выбрать кофе?</a></li>
         </ul>
 
 
@@ -33,37 +33,38 @@
 
             <div class="d-flex flex-row align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="dark" class="bi bi-person-fill me-3" viewBox="0 0 27 27">
-                    <rect width="26.7721" height="26.076" rx="10" fill="white"/>
-                    <path d="M13.386 13.8174C15.3742 13.8174 16.9872 12.2464 16.9872 10.3099C16.9872 8.37351 15.3742 6.80244 13.386 6.80244C11.3979 6.80244 9.78489 8.37351 9.78489 10.3099C9.78489 12.2464 11.3979 13.8174 13.386 13.8174ZM16.587 14.5969C15.6787 14.5969 14.7879 14.8571 13.8852 14.9587C13.7213 14.9771 13.5548 14.9866 13.386 14.9866C13.2172 14.9866 13.0507 14.9771 12.8869 14.9586C11.9842 14.8569 11.0935 14.5969 10.185 14.5969C8.41696 14.5969 6.98401 15.9926 6.98401 17.7147V18.1044C6.98401 18.7499 7.52168 19.2736 8.18439 19.2736H18.5877C19.2504 19.2736 19.788 18.7499 19.788 18.1044V17.7147C19.788 15.9926 18.3551 14.5969 16.587 14.5969Z" fill="black"/>
+                    <rect width="26.7721" height="26.076" rx="10" fill="dark"/>
+                    <path d="M13.386 13.8174C15.3742 13.8174 16.9872 12.2464 16.9872 10.3099C16.9872 8.37351 15.3742 6.80244 13.386 6.80244C11.3979 6.80244 9.78489 8.37351 9.78489 10.3099C9.78489 12.2464 11.3979 13.8174 13.386 13.8174ZM16.587 14.5969C15.6787 14.5969 14.7879 14.8571 13.8852 14.9587C13.7213 14.9771 13.5548 14.9866 13.386 14.9866C13.2172 14.9866 13.0507 14.9771 12.8869 14.9586C11.9842 14.8569 11.0935 14.5969 10.185 14.5969C8.41696 14.5969 6.98401 15.9926 6.98401 17.7147V18.1044C6.98401 18.7499 7.52168 19.2736 8.18439 19.2736H18.5877C19.2504 19.2736 19.788 18.7499 19.788 18.1044V17.7147C19.788 15.9926 18.3551 14.5969 16.587 14.5969Z" 
+                    fill="white"/>
                   </svg>
-              <a class="nav-link btn text-white me-3 nav-link-font" data-bs-toggle="modal" data-bs-target="#authModal">Вход</a>
-              <a class="btn nav-link text-white nav-link-font" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</a>
+              <a class="nav-link btn text-black me-3 sub-header-font" data-bs-toggle="modal" data-bs-target="#authModal">Вход</a>
+              <a class="btn nav-link text-black sub-header-font" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</a>
             </div>
 
             <?php endif; ?>
       </div>
     </div>
-  </header>
+</header>
 <header class="p-3 main-header">
     <div class="container-user">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/ground-black" class="d-flex align-items-center mb-2 mb-lg-0 me-5 text-white text-decoration-none">
-          <img class="logo" src="/ground-black/assets/img/logo.png" alt="logo-website">
+        <a href="/" class="d-flex align-items-center ms-3 mb-2 mb-lg-0 me-5 text-white text-decoration-none">
+          <img class="logo" src="/assets/img/logo.png" alt="logo-website">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/ground-black" class="nav-link px-2 text-white nav-link-font">Главная</a></li>
-          <li><a href="/ground-black/pages/catalog.php" class="nav-link px-2 text-white nav-link-font">Каталог</a></li>
-          <li><a href="#" class="nav-link px-2 text-white nav-link-font">Магазины</a></li>
-          <li><a href="/ground-black/pages/aboutme.php" class="nav-link px-2 text-white nav-link-font">О нас</a></li>
-          <li><a href="/ground-black/pages/contactus.php" class="nav-link px-2 text-white nav-link-font">Контакты</a></li>
+          <li><a href="/" class="pointer nav-link px-2 text-black nav-link-font">Главная</a></li>
+          <li><a href="/pages/catalog.php" class="pointer nav-link px-2 text-black nav-link-font">Каталог</a></li>
+          <li><a href="#" class="pointer nav-link px-2 text-black nav-link-font">Магазины</a></li>
+          <li><a href="/pages/aboutme.php" class="pointer nav-link px-2 text-black nav-link-font">О нас</a></li>
+          <li><a href="/pages/contactus.php" class="pointer nav-link px-2 text-black nav-link-font">Контакты</a></li>
         </ul>
 
 
         
 
             <div>
-              <button type="button" class="btn btn me-2 nav-link-font" style="text-align: center; background-color: black; border-radius: 10px; color: white; min-height: 39px">Связь с нами</button>
+              <button type="button" class="btn btn me-2 sub-header-font" style="text-align: center; background-color: black; border-radius: 10px; color: white; min-height: 39px">Связь с нами</button>
               <a href="/ground-black/pages/favorite.php" class="btn btn me-2" style="background-color: black">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-heart" viewBox="0 0 16 16">
                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>

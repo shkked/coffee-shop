@@ -53,7 +53,7 @@
                         </a>
                     </div>
                     <div class="copyright-info nav-link-font d-flex flex-column justify-content-start align-items-end" style="font-size: 15px; font-weight: 400">
-                        <p>© 2023 "Ground Black"</p>
+                        <p>© 2024 "Ground Black"</p>
                         <p>Все права защищены</p>
                     </div>
             </section>

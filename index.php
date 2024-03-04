@@ -6,7 +6,6 @@
     <title>Ground Black</title>
     <?php include("./modules/links.php") ?>
     <link rel="stylesheet" href="./style/style.css">
-    <script defer src="./assets/script/ranges-bg.js"></script>
 </head>
 <body>
     <?php include ("./modules/header.php"); ?>
@@ -14,23 +13,52 @@
       <div class="container-user">
         <section class="d-flex flex-row justify-content-between">
         <div class="info-left d-flex align-items-center justify-content-start">
-          <div class="d-flex flex-column align-items-start ps-5" style="width: 70%">
-            <p class="nav-link-font" style="font-size: 34px;">Начни день с любимого <span style="font-style: italic">эспрессо</span></p>
-            <p class="amiko-font" style="color: Black; font-size: 13px">Плотный кофе со вкусом жареных орехов, печенья и нуги</p>
-            <button type="button" class="my-btn btn text-center amiko-font">Купить</button>
+          <div class="d-flex flex-column align-items-start ps-5" style="width: 80%">
+            <p class="nav-link-font" style="font-size: 34px;">
+            Начни день с любимого 
+            <span style="font-style: italic">эспрессо</span>
+            </p>
+            <p class="amiko-font w-75" style="font-size: 13px">
+            Плотный кофе со вкусом жареных орехов, печенья и нуги
+            </p>
+            <button type="button" class="my-btn btn text-center sub-header-font">Купить</button>
           </div>
         </div>
         <div class="info-right d-flex justify-content-center align-items-center">
-          <img src="/ground-black/assets/img/espresso-main.png" alt="espresso">
+          <img src="/assets/img/espresso-main.png" alt="espresso">
         </div>
         </section>
         <section>
-          <h2 class="h2-title nav-link-font">Часто покупают</h2>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <h2 class="h2-title nav-link-font">Последние статьи</h2>
+            <a href="#" class="text-dark underlined sub-header-font">Посмотреть все</a>
+          </div>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <div class="d-flex flex-column" style="max-width: 230px">
+              <div style="background-color: #BCB5A6; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <!-- <img src="/assets/img/espresso-main.png" alt=""> -->
+              </div>
+              <div class="p-4" style="background-color: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                <p style="font-weight: bold; font-size: 20px" class="amiko-font text-black">Как приготовить кофе дома?</p>
+                <div class="user d-flex flex-row ">
+                <div style="border-radius: 60px; width: 18px; height: 18px; background-color: #BCB5A6"></div>
+                  <p class="ms-2 amiko-font text-black mb-0">Кирилл</p>
+                </div>
+              </div>
+            </div>
+
+</div>
+        </section>
+        <section>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <h2 class="h2-title nav-link-font">Часто покупают</h2>
+            <a href="#" class="text-dark underlined sub-header-font">Посмотреть все</a>
+          </div>
           <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class="card" style="width: 19rem;">
                 <div class="ps-4 pt-4 pe-4">
                   <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-                    <img src="/ground-black/assets/img/espresso-main.png" class="card-img-top" alt="...">
+                    <img src="/assets/img/espresso-main.png" class="card-img-top" alt="...">
                     <div class="favorite">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                           <circle cx="17" cy="17" r="17" fill="white"/>
@@ -87,7 +115,7 @@
                 <div class="card" style="width: 19rem;">
                 <div class="ps-4 pt-4 pe-4">
                   <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-                    <img src="/ground-black/assets/img/espresso-main.png" class="card-img-top" alt="...">
+                    <img src="/assets/img/espresso-main.png" class="card-img-top" alt="...">
                     <div class="favorite">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                           <circle cx="17" cy="17" r="17" fill="white"/>
@@ -144,7 +172,7 @@
                 <div class="card" style="width: 19rem;">
                 <div class="ps-4 pt-4 pe-4">
                   <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-                    <img src="/ground-black/assets/img/espresso-main.png" class="card-img-top" alt="...">
+                    <img src="/assets/img/espresso-main.png" class="card-img-top" alt="...">
                     <div class="favorite">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                           <circle cx="17" cy="17" r="17" fill="white"/>

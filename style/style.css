@@ -19,27 +19,31 @@ main {
   height: 100%;
 }
 
+.underlined {
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: "Charter";
   src: url("../assets/fonts/charter/ttf/Charter-Bold-Italic.ttf");
-  font-weight: normal;
+  font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "Charter";
-  src: url("../assets/fonts/charter/otf/CharterC-Bold.otf");
-  font-weight: 700;
+  src: url("../assets/fonts/charter/ttf/Charter-Bold.ttf");
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Charter";
-  src: url("../assets/fonts/charter/otf/Charter-Italic.otf");
+  src: url("../assets/fonts/charter/ttf/Charter-Italic.ttf");
   font-style: italic;
   font-weight: normal;
 }
 @font-face {
   font-family: "Charter";
-  src: url("../assets/fonts/charter/otf/Charter-Regular.otf");
+  src: url("../assets/fonts/charter/ttf/Charter-Regular.ttf");
   font-style: normal;
   font-weight: normal;
 }
@@ -63,22 +67,32 @@ main {
 }
 
 .h2-title {
-  font-size: 24px !important;
-  color: white;
+  font-size: 32px !important;
+  color: black;
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
 .nav-link-font {
   font-family: "Charter";
-  font-weight: 700;
+  font-weight: bold;
   line-height: normal;
   font-size: 15px;
+}
+
+.sub-header-font {
+  font-family: "Charter";
+  font-weight: normal;
   line-height: normal;
+  font-size: 15px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 body {
-  background-color: #306342;
+  background-color: #E9E8E8;
 }
 
 .top-header {
@@ -101,15 +115,25 @@ header .logo {
 }
 
 .info-right {
-  background: #9A9370;
+  background: white;
 }
 
 .info-left {
-  background-color: white;
+  background-color: #BCB5A6;
+}
+.info-left p {
+  color: white;
 }
 .info-left .my-btn {
   width: 110px;
   height: 35.009px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+.info-left .my-btn:hover {
+  background-color: black;
+  color: white;
 }
 
 h1 {

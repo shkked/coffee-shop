@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <?php include("../modules/links.php") ?>
-    <link rel="stylesheet" href="../style/style.css">
-    <script defer src="../assets/script/script.js"></script>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>
