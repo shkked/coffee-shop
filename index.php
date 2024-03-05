@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ground Black</title>
     <?php include("./modules/links.php") ?>
-    <link rel="stylesheet" href="./style/style.css">
+    <!-- <link rel="stylesheet" href="./style/style.css"> -->
 </head>
 <body>
     <?php include ("./modules/header.php"); ?>
@@ -49,7 +49,7 @@
 
 </div>
         </section>
-        <section>
+        <section style="margin-bottom: 140px">
           <div class="d-flex flex-row justify-content-between align-items-center">
             <h2 class="h2-title nav-link-font">Часто покупают</h2>
             <a href="#" class="text-dark underlined sub-header-font">Посмотреть все</a>

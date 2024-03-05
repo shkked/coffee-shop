@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link type="image/x-icon" href="/ground-black/assets/img/logo.ico" rel="shortcut icon">
-    <link type="Image/x-icon" href="/ground-black/assets/img/logo.ico" rel="icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../style/style.css">
-    <script defer src="../assets/script/script.js"></script>
+    <title>Ground black</title>
+    <?php include("../modules/links.php") ?>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>
@@ -29,10 +24,10 @@
     </div>
     <button >qwe</button> -->
 
-        <div class="container">
+        <div class="container-user">
             <section class="d-flex align-center flex-column justify-center">
-                <h1 class="mt-5">Связь с нами</h1>
-                <p class="text-center mt-4 mb-4">Остались вопросы? Есть предложения? Воспользуйтесь формой ниже</p>
+                <h1 class="mt-5 nav-link-font h2-title">Связь с нами</h1>
+                <p class="text-center mt-4 mb-4 sub-header-font text-black">Остались вопросы? Есть предложения? Воспользуйтесь формой ниже</p>
                 <div class="contact-form">
                     <form id="contactUs" name="contactForm" class="d-flex flex-column justify-center align-center" action="../modules/contactForm.php" method="POST">
                         <div>

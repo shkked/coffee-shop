@@ -73,7 +73,7 @@ main {
   margin-bottom: 48px;
 }
 
-.nav-link-font {
+.nav-link-font, .why-we .why-we-div p {
   font-family: "Charter";
   font-weight: bold;
   line-height: normal;
@@ -91,6 +91,10 @@ main {
   cursor: pointer;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
 body {
   background-color: #E9E8E8;
 }
@@ -101,6 +105,9 @@ body {
 
 .main-header .nav li:nth-child(n):not(:last-child) {
   margin-right: 25px;
+}
+.main-header .nav .nav-link:hover {
+  text-decoration: underline !important;
 }
 
 header .logo {
@@ -211,11 +218,32 @@ h1 {
   display: block !important;
 }
 
-.company-text p {
-  float: right;
+.company-text p, .company-text li {
+  font-size: 18px !important;
 }
 .company-text img {
   width: 300px;
+}
+
+.why-we .why-we-div {
+  background-color: #FFF;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  width: 170px;
+  height: 170px;
+}
+.why-we .why-we-div p {
+  font-size: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.why-we .why-we-div img {
+  width: 2.5em;
+  margin-bottom: 10px;
 }
 
 .contact-form {
