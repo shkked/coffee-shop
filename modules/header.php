@@ -63,8 +63,8 @@
 
         
 
-            <div>
-              <button type="button" class="btn btn me-2 sub-header-font" style="text-align: center; background-color: black; border-radius: 10px; color: white; min-height: 39px">Связь с нами</button>
+            <div class="d-flex flex-row align-items-center">
+              <a data-bs-toggle="modal" data-bs-target="#contactus" type="button" class="d-flex align-items-center mb-0 btn btn me-2 sub-header-font" style="text-align: center; background-color: black; border-radius: 10px; color: white; min-height: 39px">Связь с нами</a>
               <a href="/pages/favorite.php" class="btn btn me-2" style="background-color: black">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-heart" viewBox="0 0 16 16">
                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
@@ -163,6 +163,32 @@
     <button class="btn btn-primary" type="submit">Войти</button>
   </div>
 </form>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="modal fade" id="contactus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="exampleModalLabel">Связь с нами</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+            <section class="d-flex align-center flex-column justify-center">
+                <p class="text-start mt-4 mb-4 sub-header-font text-black">Остались вопросы? Есть предложения? Воспользуйтесь формой ниже</p>
+                <div class="contact-form">
+                    <form id="contactUs" name="contactForm" class="d-flex flex-column justify-center align-center" action="/modules/contactForm.php" method="POST">
+                        <div>
+                            <input type="text" name="name" placeholder="Как вас зовут?" required>
+                            <input type="email" name="email" placeholder="Введите почту" required>
+                            <input type="text" name="question" placeholder="Какой вопрос вас интересует?" required>
+                        </div>
+                        <textarea name="message" cols="30" rows="10" placeholder="Ваше сообщение" required></textarea>
+                        <button class="mt-3 mx-auto" type="submit">Отправить заявку</button>
+                    </form>
+                </div>
+            </section>
       </div>
     </div>
   </div>

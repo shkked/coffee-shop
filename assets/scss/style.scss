@@ -95,6 +95,11 @@ body{
 }
 .top-header{
     min-height: 65px;
+    .sub-header-font{
+        &:hover{
+            text-decoration: underline !important;
+        }
+    }
 }
 .main-header{
     .nav{
@@ -252,23 +257,40 @@ h1{
     display: flex;
     justify-content: center;
     input{
-        width: 300px;
+        width: 100%;
         padding: 10px !important;
         margin-top: 15px;
         margin-bottom: 15px;
-
+        @extend .sub-header-font;
+        color: black;
     }
     textarea{
         padding: 10px !important;
-
+        @extend .sub-header-font;
+        color: black;
     }
     button{
         padding: 10px 15px;
         width: 200px;
         background-color: black;
         color: white;
+        border-radius: 10px;
+        border: none;
+        @extend .sub-header-font;
     }
 
+}
+.contact-us{
+    .accordion-button:focus{
+        box-shadow: none !important;
+    }
+    .accordion-button:not(.collapsed){
+        background-color: grey !important;  
+        color: white; 
+    }
+    .accordion-button:not(.collapsed)::after {
+        filter: brightness(0) invert(1);
+    }
 }
 footer{
     height: 356px;

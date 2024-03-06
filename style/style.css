@@ -80,7 +80,7 @@ main {
   font-size: 15px;
 }
 
-.sub-header-font {
+.sub-header-font, .contact-form button, .contact-form textarea, .contact-form input {
   font-family: "Charter";
   font-weight: normal;
   line-height: normal;
@@ -101,6 +101,9 @@ body {
 
 .top-header {
   min-height: 65px;
+}
+.top-header .sub-header-font:hover, .top-header .contact-form button:hover, .contact-form .top-header button:hover, .top-header .contact-form textarea:hover, .contact-form .top-header textarea:hover, .top-header .contact-form input:hover, .contact-form .top-header input:hover {
+  text-decoration: underline !important;
 }
 
 .main-header .nav li:nth-child(n):not(:last-child) {
@@ -251,19 +254,34 @@ h1 {
   justify-content: center;
 }
 .contact-form input {
-  width: 300px;
+  width: 100%;
   padding: 10px !important;
   margin-top: 15px;
   margin-bottom: 15px;
+  color: black;
 }
 .contact-form textarea {
   padding: 10px !important;
+  color: black;
 }
 .contact-form button {
   padding: 10px 15px;
   width: 200px;
   background-color: black;
   color: white;
+  border-radius: 10px;
+  border: none;
+}
+
+.contact-us .accordion-button:focus {
+  box-shadow: none !important;
+}
+.contact-us .accordion-button:not(.collapsed) {
+  background-color: grey !important;
+  color: white;
+}
+.contact-us .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
 }
 
 footer {
