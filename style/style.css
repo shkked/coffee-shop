@@ -19,7 +19,7 @@ main {
   height: 100%;
 }
 
-.underlined {
+.underlined, .cityMain p:hover {
   text-decoration: underline;
 }
 
@@ -87,7 +87,7 @@ main {
   font-size: 15px;
 }
 
-.pointer {
+.pointer, .cityMain p:hover {
   cursor: pointer;
 }
 
@@ -282,6 +282,19 @@ h1 {
 }
 .contact-us .accordion-button:not(.collapsed)::after {
   filter: brightness(0) invert(1);
+}
+
+.clear-btn {
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  height: 40px;
+}
+.clear-btn:hover {
+  background-color: black;
+  color: white;
 }
 
 footer {

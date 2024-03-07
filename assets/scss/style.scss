@@ -90,6 +90,12 @@ main{
 .text-italic{
     font-style: italic;
 }
+.cityMain{
+    p:hover{
+        @extend .underlined;
+        @extend .pointer;
+    }
+}
 body{
     background-color: #E9E8E8;
 }
@@ -290,6 +296,18 @@ h1{
     }
     .accordion-button:not(.collapsed)::after {
         filter: brightness(0) invert(1);
+    }
+}
+.clear-btn {
+    text-align: center;
+    background-color: white; 
+    border-radius: 10px; 
+    border: 1px solid black;
+    color: black;
+    height: 40px;
+    &:hover{
+        background-color: black;
+        color: white;
     }
 }
 footer{

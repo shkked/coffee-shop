@@ -3,7 +3,8 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-black sub-header-font">г.Москва 
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#pickerCity" class="nav-link px-2 text-black sub-header-font">
+            г. <span class="city-current">Москва</span>
           <svg class="mb-1" xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
             <path d="M6.98486 9.74365L0.344238 3.10303C-0.114746 2.64404 -0.114746 1.90186 0.344238 1.44775L1.44775 0.344238C1.90674 -0.114746 2.64893 -0.114746 3.10303 0.344238L7.81006 5.05127L12.5171 0.344238C12.9761 -0.114746 13.7183 -0.114746 14.1724 0.344238L15.2759 1.44775C15.7349 1.90674 15.7349 2.64893 15.2759 3.10303L8.63525 9.74365C8.18604 10.2026 7.44385 10.2026 6.98486 9.74365Z" fill="black"/>
           </svg>
@@ -188,6 +189,24 @@
                         <button class="mt-3 mx-auto" type="submit">Отправить заявку</button>
                     </form>
                 </div>
+            </section>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="modal fade" id="pickerCity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="exampleModalLabel">Выбор города</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+            <section class="d-flex align-center flex-row justify-center cityMain">
+              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Москва</p></div>
+              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Санкт-Петербург</p></div>
+              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Нижний Новгород</p></div>
+              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Мытищи</p></div>
             </section>
       </div>
     </div>
