@@ -49,17 +49,20 @@ main {
 }
 .my-btn {
   border-radius: 10px;
-  background: #9A9370;
-  border-color: unset !important;
-}
-.my-btn:hover {
   background: black;
   color: white;
+  border-color: unset !important;
+  width: 110px;
+  height: 38px;
+}
+.my-btn:hover {
+  background: white;
+  color: black;
 }
 
-.amiko-font, .card {
+.amiko-font, .cart-buttons .promo, .cart .cart-item .quantity #value, .card {
   font-family: "Amiko", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -80,11 +83,11 @@ main {
   font-size: 15px;
 }
 
-.sub-header-font, .contact-form button, .contact-form textarea, .contact-form input {
+.sub-header-font, .catalog .catalog-categories > div, .catalog .catalog-filters .price .form-select, .catalog .catalog-filters .price .form-control, .clear-btn, .contact-form button, .contact-form textarea, .contact-form input {
   font-family: "Charter";
   font-weight: normal;
   line-height: normal;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .pointer, .cityMain p:hover {
@@ -102,7 +105,7 @@ body {
 .top-header {
   min-height: 65px;
 }
-.top-header .sub-header-font:hover, .top-header .contact-form button:hover, .contact-form .top-header button:hover, .top-header .contact-form textarea:hover, .contact-form .top-header textarea:hover, .top-header .contact-form input:hover, .contact-form .top-header input:hover {
+.top-header .sub-header-font:hover, .top-header .catalog .catalog-categories > div:hover, .catalog .top-header .catalog-categories > div:hover, .top-header .catalog .catalog-filters .price .form-select:hover, .catalog .catalog-filters .price .top-header .form-select:hover, .top-header .catalog .catalog-filters .price .form-control:hover, .catalog .catalog-filters .price .top-header .form-control:hover, .top-header .clear-btn:hover, .top-header .contact-form button:hover, .contact-form .top-header button:hover, .top-header .contact-form textarea:hover, .contact-form .top-header textarea:hover, .top-header .contact-form input:hover, .contact-form .top-header input:hover {
   text-decoration: underline !important;
 }
 
@@ -176,7 +179,7 @@ h1 {
 }
 .card .favorite {
   position: absolute;
-  top: 40%;
+  top: 39%;
   right: 15%;
 }
 .card .card-ranges input[type=range]::before {
@@ -290,11 +293,200 @@ h1 {
   border-radius: 10px;
   border: 1px solid black;
   color: black;
-  height: 40px;
+  height: 34px;
+  font-size: 14px !important;
 }
 .clear-btn:hover {
   background-color: black;
   color: white;
+}
+
+.row {
+  margin: 0;
+}
+
+.catalog h1 {
+  color: #FFF;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 48px;
+  margin-top: 48px;
+}
+.catalog .why-we-div:hover {
+  cursor: pointer !important;
+}
+.catalog .catalog-filters .container-range {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.catalog .catalog-filters input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+.catalog .catalog-filters .slider-track {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: black;
+  border: 1px solid black;
+}
+.catalog .catalog-filters input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 5px;
+}
+.catalog .catalog-filters input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  height: 5px;
+}
+.catalog .catalog-filters input[type=range]::-ms-track {
+  appearance: none;
+  height: 5px;
+}
+.catalog .catalog-filters input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  background-color: black;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  border-radius: 50%;
+}
+.catalog .catalog-filters input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  pointer-events: auto;
+}
+.catalog .catalog-filters input[type=range]::-ms-thumb {
+  appearance: none;
+  height: 1.2em;
+  width: 1.2em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  pointer-events: auto;
+}
+.catalog .catalog-filters input[type=range]:active::-webkit-slider-thumb {
+  background-color: #ffffff;
+  border: 3px solid black;
+}
+.catalog .catalog-filters .price .form-control {
+  color: black;
+  border: 1px solid black;
+  background-color: white !important;
+}
+.catalog .catalog-filters .price .form-select {
+  color: black;
+  border: unset !important;
+  border-bottom: 1px solid black !important;
+  background-color: unset !important;
+  border-radius: unset !important;
+}
+.catalog .catalog-filters .price .form-select:focus {
+  outline: black !important;
+  box-shadow: none !important;
+}
+.catalog .catalog-filters .price .form-select:hover {
+  cursor: pointer;
+}
+.catalog .catalog-filters .filter-taste {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+}
+.catalog .catalog-filters .filter-taste:hover {
+  background-color: black;
+  color: white;
+}
+.catalog .catalog-categories > div {
+  background-color: #808080;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 50px;
+  height: 34px;
+  border-radius: 10px;
+  font-size: 14px !important;
+  margin-right: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.cart .cart-item {
+  background-color: white;
+  border-radius: 10px;
+  height: 200px;
+}
+.cart .cart-item .item-name {
+  font-size: 16px !important;
+}
+.cart .cart-item .delete {
+  cursor: pointer;
+  position: absolute;
+}
+.cart .cart-item .delete img {
+  position: relative;
+  top: -80px;
+  left: 925px;
+  width: 18px;
+  height: 18px;
+}
+.cart .cart-item .cart-img-top {
+  width: 150px;
+  height: 150px;
+}
+.cart .cart-item .article {
+  font-size: 11px;
+  font-weight: 400;
+  color: #808080 !important;
+}
+.cart .cart-item .quantity #minus, .cart .cart-item .quantity #value, .cart .cart-item .quantity #plus {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  outline: unset !important;
+  border: unset !important;
+  text-shadow: unset !important;
+}
+.cart .cart-item .quantity #value {
+  font-size: 13px !important;
+}
+
+.cart-buttons .promo {
+  border-radius: 10px;
+  height: 49px;
+  width: 80%;
+}
+.cart-buttons .end-order {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
 }
 
 footer {
@@ -329,12 +521,4 @@ footer .header-footer h4 {
 }
 footer .header-footer ul > li:not(:last-child) {
   margin-bottom: 16px;
-}
-
-.catalog h1 {
-  color: #FFF;
-  font-size: 24px;
-  text-align: left;
-  margin-bottom: 48px;
-  margin-top: 48px;
 }

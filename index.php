@@ -52,7 +52,7 @@
         <section style="margin-bottom: 140px">
           <div class="d-flex flex-row justify-content-between align-items-center">
             <h2 class="h2-title nav-link-font">Часто покупают</h2>
-            <a href="#" class="text-dark underlined sub-header-font">Посмотреть все</a>
+            <a href="/pages/catalog.php" class="text-dark underlined sub-header-font">Посмотреть все</a>
           </div>
           <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class="card" style="width: 19rem;">
@@ -107,7 +107,7 @@
                             <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">2039 ₽</p>
                           </div>
                         </div>
-                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center" style="width: 110px; height: 47.009px;">Купить</a>
+                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center">Купить</a>
                       </div>
                   </div>
                 </div>
@@ -164,7 +164,7 @@
                             <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">2039 ₽</p>
                           </div>
                         </div>
-                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center" style="width: 110px; height: 47.009px;">Купить</a>
+                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center">Купить</a>
                       </div>
                   </div>
                 </div>
@@ -221,7 +221,7 @@
                             <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">2039 ₽</p>
                           </div>
                         </div>
-                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center" style="width: 110px; height: 47.009px;">Купить</a>
+                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center">Купить</a>
                       </div>
                   </div>
                 </div>
