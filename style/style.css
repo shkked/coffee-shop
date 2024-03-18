@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.splide__slide {
+  background-color: #BCB5A6;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -21,6 +29,10 @@ main {
 
 .underlined, .cityMain p:hover {
   text-decoration: underline;
+}
+
+.rounded {
+  border-radius: 10px !important;
 }
 
 @font-face {
@@ -51,7 +63,7 @@ main {
   border-radius: 10px;
   background: black;
   color: white;
-  border-color: unset !important;
+  border: 1px solid black black !important;
   width: 110px;
   height: 38px;
 }
@@ -60,7 +72,16 @@ main {
   color: black;
 }
 
-.amiko-font, .cart-buttons .promo, .cart .cart-item .quantity #value, .card {
+.fav-btn {
+  border-radius: 10px;
+  background: white;
+  color: black;
+  border: 1px solid black !important;
+  width: 39px;
+  height: 39px;
+}
+
+.amiko-font, .item_info .table_property th, .item_info .table_property td, .how_make .make_txt p, .cart-buttons .promo, .cart .cart-item .quantity #value, .card {
   font-family: "Amiko", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -83,7 +104,7 @@ main {
   font-size: 15px;
 }
 
-.sub-header-font, .catalog .catalog-categories > div, .catalog .catalog-filters .price .form-select, .catalog .catalog-filters .price .form-control, .clear-btn, .contact-form button, .contact-form textarea, .contact-form input {
+.sub-header-font, .how_make .make_txt li, .catalog .catalog-categories > div, .catalog .catalog-filters .price .form-select, .catalog .catalog-filters .price .form-control, .clear-btn, .contact-form button, .contact-form textarea, .contact-form input, .my-btn, .fav-btn {
   font-family: "Charter";
   font-weight: normal;
   line-height: normal;
@@ -105,7 +126,7 @@ body {
 .top-header {
   min-height: 65px;
 }
-.top-header .sub-header-font:hover, .top-header .catalog .catalog-categories > div:hover, .catalog .top-header .catalog-categories > div:hover, .top-header .catalog .catalog-filters .price .form-select:hover, .catalog .catalog-filters .price .top-header .form-select:hover, .top-header .catalog .catalog-filters .price .form-control:hover, .catalog .catalog-filters .price .top-header .form-control:hover, .top-header .clear-btn:hover, .top-header .contact-form button:hover, .contact-form .top-header button:hover, .top-header .contact-form textarea:hover, .contact-form .top-header textarea:hover, .top-header .contact-form input:hover, .contact-form .top-header input:hover {
+.top-header .sub-header-font:hover, .top-header .how_make .make_txt li:hover, .how_make .make_txt .top-header li:hover, .top-header .catalog .catalog-categories > div:hover, .catalog .top-header .catalog-categories > div:hover, .top-header .catalog .catalog-filters .price .form-select:hover, .catalog .catalog-filters .price .top-header .form-select:hover, .top-header .catalog .catalog-filters .price .form-control:hover, .catalog .catalog-filters .price .top-header .form-control:hover, .top-header .clear-btn:hover, .top-header .contact-form button:hover, .contact-form .top-header button:hover, .top-header .contact-form textarea:hover, .contact-form .top-header textarea:hover, .top-header .contact-form input:hover, .contact-form .top-header input:hover, .top-header .my-btn:hover, .top-header .fav-btn:hover {
   text-decoration: underline !important;
 }
 
@@ -481,12 +502,52 @@ h1 {
   border-radius: 10px;
   height: 49px;
   width: 80%;
+  border: 1px solid black;
 }
 .cart-buttons .end-order {
   background-color: black;
   color: white;
   border-radius: 10px;
   height: 50px;
+  border: 1px solid black;
+}
+
+.how_make .make_txt li, .how_make .make_txt p {
+  color: black;
+  font-size: 18px;
+}
+.how_make .make_txt li {
+  font-weight: bold;
+}
+
+.item_info .item_text .amiko-font, .item_info .item_text .table_property th, .item_info .table_property .item_text th, .item_info .item_text .table_property td, .item_info .table_property .item_text td, .item_info .item_text .card, .item_info .item_text .cart .cart-item .quantity #value, .cart .cart-item .quantity .item_info .item_text #value, .item_info .item_text .cart-buttons .promo, .cart-buttons .item_info .item_text .promo, .item_info .item_text .how_make .make_txt p, .how_make .make_txt .item_info .item_text p {
+  color: black;
+  font-size: 16px;
+}
+.item_info .item_text .article {
+  font-size: 12px;
+  font-weight: 400;
+  color: #808080 !important;
+}
+.item_info .table_property th, .item_info .table_property td {
+  color: black;
+  font-size: 16px;
+  padding: 15px;
+}
+.item_info .table_property th {
+  font-weight: bold;
+}
+.item_info .table_property tr:first-child > th {
+  border-top-left-radius: 10px;
+}
+.item_info .table_property tr:first-child > td {
+  border-top-right-radius: 10px;
+}
+.item_info .table_property tr:last-child th {
+  border-bottom-left-radius: 10px;
+}
+.item_info .table_property tr:last-child > td {
+  border-bottom-right-radius: 10px;
 }
 
 footer {

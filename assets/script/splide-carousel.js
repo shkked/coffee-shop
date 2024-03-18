@@ -1,0 +1,11 @@
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.splide', {
+        // настройки слайдера
+        type: 'loop',
+        rewind: true,
+        perPage: 1,
+        autoplay: true,
+        pauseOnHover: true,
+        height: '100%',
+    }).mount();
+});
