@@ -11,4 +11,4 @@ $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
 $conn -> query("INSERT INTO `contact-us` (`form_username`, `form_email`, `form_question`, `form_text`) VALUES ('$name', '$email', '$question', '$message')");
 $conn -> close();
 
-header('Location: /ground-black/pages/contactus.php');
+header('Location: /');

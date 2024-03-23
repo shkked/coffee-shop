@@ -7,3 +7,4 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/style.css">
     <script defer src="/assets/script/script.js"></script>
+    <script defer src="/assets/script/validate.js"></script>

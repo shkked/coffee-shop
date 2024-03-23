@@ -1,13 +1,15 @@
 'use strict';
 let editAdmin = false;
 let myModal = new bootstrap.Modal(document.getElementById('pickerCity'));
-if(document.querySelector('#contactUs')){
-    document.querySelector('#contactUs').addEventListener('submit', function(e){
-        e.preventDefault();
-        Array.from(document.forms[3]).forEach(item => item.value ? item.value = "" : '');
-        alert("Заявка успешно отправлена");
-    });
-}
+let contactModal = new bootstrap.Modal(document.getElementById('contactus'));
+// if(document.querySelector('#contactUs')){
+//     document.querySelector('#contactUs').addEventListener('submit', function(e){
+//         e.preventDefault();
+//         Array.from(document.forms[3]).forEach(item => item.value ? item.value = "" : '');
+//         contactModal.hide();
+//         alert("Заявка успешно отправлена");
+//     });
+// }
 if(document.querySelector('#customRange3')){
     document.querySelector('#customRange3').addEventListener('change', (e) => {
         document.querySelector('#price').innerHTML = e.target.value;
@@ -24,6 +26,7 @@ document.querySelectorAll('.cityPick').forEach(item => item.addEventListener('cl
    document.querySelector('.city-current').innerHTML = e.target.innerHTML;   
    myModal.hide();
 }))
+
 // if(document.querySelector('.imgItem')){
 //     document.querySelector('.imgItem').files[0].name = "";    
 // }

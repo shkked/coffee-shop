@@ -6,4 +6,3 @@ $password = "root";
 $database = "ground-black";
 
 $conn = new mysqli($servername, $username, $password, $database);
-?>

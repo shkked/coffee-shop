@@ -4,32 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет</title>
-    <link type="image/x-icon" href="/ground-black/assets/img/logo.ico" rel="shortcut icon">
-    <link type="Image/x-icon" href="/ground-black/assets/img/logo.ico" rel="icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../style/style.css">
+    <?php include("../modules/links.php") ?>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>
     <main>
-        <div class="container">
-        
-            <section>
-                <h1 class="text-center mt-5">Личный кабинет</h1>
-                <?php 
-include("../modules/db.php");
-$id = $_COOKIE['id'];
-$result = $conn->query("SELECT * FROM `users` WHERE `id` = '$id'");
-$user = $result -> fetch_assoc();
 
-if($user):
-?> 
-                <div class="d-flex flex-column align-center">
-                    <p><strong>Ваши данные</strong></p>
-                    <p>Ваше имя: <span><?php echo $user['name'];?></span></p>
-                    <p>Ваш username: <span><?php echo $user['username'];?></span></p>
-                    <p>Ваш email: <span><?php echo $user['email'];?></span></p>
+
+        <div class="container-user">
+        <div class="modal fade" id="changePass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content contact-form">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Смена пароля</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="/modules/changePass.php" method="GET" class="row g-3 needs-validation">
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Старый пароль</label>
+            <input type="text" name="oldpass" class="form-control" id="validationCustom02" required>
+            <div class="valid-feedback">
+            Looks good!
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Новый пароль</label>
+            <input type="text" name="newpass" class="form-control" id="validationCustom02" required>
+            <div class="valid-feedback">
+            Looks good!
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Изменить</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+    </div>
+
+            <section>
+                <h1 class="text-start h2-title nav-link-font mt-5">Личный кабинет</h1>
+                <?php 
+                    include("../modules/db.php");
+                    $id = $_COOKIE['id'];
+                    $result = $conn -> query("SELECT * FROM `users` WHERE `users_id` = '$id'");
+                    $resultOrder = $conn -> query("SELECT * FROM `orders` WHERE `users_id` = '$id'");
+                    $user = $result -> fetch_assoc();
+                    $conn -> close();
+                    if($user):
+                ?> 
+                <div class="row d-flex flex-column align-center acc-info">
+                    <h1 class="h2-title nav-link-font text-black text-start"><strong>Ваши данные</strong></h1>
+                    <p>Ваше имя: <span><?php echo $user['users_name'];?></span></p>
+                    <p>Ваш username: <span><?php echo $user['users_username'];?></span></p>
+                    <p>Ваш email: <span><?php echo $user['users_email'];?></span></p>
+                    <div class="col-4">
+                        <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
+                    </div>
                 </div>
                 <?php 
                 else:

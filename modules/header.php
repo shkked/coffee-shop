@@ -15,21 +15,16 @@
 
 
         <?php if(isset($_COOKIE['role'])): ?>
-
-          <div class="text-end">
-            <p>Добро пожаловать, <span><?php echo $_COOKIE['userName']; ?></span></p>
-            <?php if($_COOKIE['role'] == 1): ?>
-
-              <p>Вы – админ</p>
-              <a href="/ground-black/pages/account.php">Личный кабинет</a>
-              <a href="/ground-black/modules/exit.php">Exit</a>
-              <?php else: ?>
-
-                <p>Вы – пользователь</p>
-                <a class="nav-link-font" href="/ground-black/pages/account.php">Личный кабинет</a>
-                <a href="/ground-black/modules/exit.php">Exit</a>
-                <?php endif; ?>
-              </div>
+          <div class="d-flex flex-row align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="dark" class="bi bi-person-fill me-3" viewBox="0 0 27 27">
+                    <rect width="26.7721" height="26.076" rx="10" fill="dark"/>
+                    <path d="M13.386 13.8174C15.3742 13.8174 16.9872 12.2464 16.9872 10.3099C16.9872 8.37351 15.3742 6.80244 13.386 6.80244C11.3979 6.80244 9.78489 8.37351 9.78489 10.3099C9.78489 12.2464 11.3979 13.8174 13.386 13.8174ZM16.587 14.5969C15.6787 14.5969 14.7879 14.8571 13.8852 14.9587C13.7213 14.9771 13.5548 14.9866 13.386 14.9866C13.2172 14.9866 13.0507 14.9771 12.8869 14.9586C11.9842 14.8569 11.0935 14.5969 10.185 14.5969C8.41696 14.5969 6.98401 15.9926 6.98401 17.7147V18.1044C6.98401 18.7499 7.52168 19.2736 8.18439 19.2736H18.5877C19.2504 19.2736 19.788 18.7499 19.788 18.1044V17.7147C19.788 15.9926 18.3551 14.5969 16.587 14.5969Z" 
+                    fill="white"/>
+                  </svg>
+              <a href="/pages/account.php" class="nav-link btn text-black me-3 sub-header-font">Вы – <?php echo $_COOKIE['userName']; ?></a>
+              <a href="/modules/exit.php" class="nav-link btn text-black me-3 sub-header-font">Выйти</a>
+            </div>
+          
           <?php else: ?>
 
             <div class="d-flex flex-row align-items-center">
@@ -84,47 +79,63 @@
 
   <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content contact-form">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Регистрация</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/php/modules/reg.php" method="POST" class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Имя</label>
-    <input type="text" name="name" class="form-control" id="validationCustom01" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Никнейм</label>
-    <input type="text" name="username" class="form-control" id="validationCustom02" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Почта</label>
-    <input type="email" name="email" class="form-control" id="validationCustom02" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Пароль</label>
-    <input type="password" name="pass" class="form-control" id="validationCustom02" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Регистрация</button>
-  </div>
-  <div>
-    <p>Зарегистрированы? <a style="text-decoration: underline; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#authModal">Войдите</a></p>
-  </div>
+      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation-reg" novalidate>
+        <div class="col-md-4">
+          <label for="validationName" class="form-label">Имя</label>
+          <input type="text" name="name" class="form-control" id="validationName"
+          pattern="[А-Яа-я]+"
+          required>
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+          <div class="invalid-feedback">
+            Введите правильное имя
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationPhone" class="form-label">Номер телефона</label>
+          <input type="tel" name="tel" class="form-control" id="validationPhone" 
+          required
+          placeholder="+7 (999) 999-99-99"
+          title="Номер телефона">
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+          <div class="invalid-feedback">
+            Введите правильный номер телефона
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationEmal" class="form-label">Почта</label>
+          <input type="email" name="email" class="form-control" id="validationEmail"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required>
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+          <div class="invalid-feedback">
+            Введите правильную почту
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationPass" class="form-label">Пароль</label>
+          <input type="password" name="pass" class="form-control" id="validationPass" required>
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Регистрация</button>
+        </div>
+        <div>
+          <p class="amiko-font text-black">Зарегистрированы? <a style="text-decoration: underline; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#authModal">Войдите</a></p>
+        </div>
 </form>
       </div>
     </div>
@@ -132,32 +143,25 @@
     </div>
     <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content contact-form">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Авторизация</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/php/modules/auth.php" method="GET" class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Никнейм</label>
-    <input type="text" name="username" class="form-control" id="validationCustom02" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
+      <form action="/modules/auth.php" method="GET" class="row g-3 needs-validation">
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Почта</label>
     <input type="email" name="email" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
-      Looks good!
+      Отлично!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Пароль</label>
     <input type="password" name="pass" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
-      Looks good!
+      Отлично!
     </div>
   </div>
   <div class="col-12">
@@ -177,7 +181,7 @@
       </div>
       <div class="modal-body px-4">
             <section class="d-flex align-center flex-column justify-center">
-                <p class="text-start mt-4 mb-4 sub-header-font text-black">Остались вопросы? Есть предложения? Воспользуйтесь формой ниже</p>
+                <p class="text-center mt-4 mb-4 amiko-font text-black">Остались вопросы? Есть предложения? Воспользуйтесь формой ниже</p>
                 <div class="contact-form">
                     <form id="contactUs" name="contactForm" class="d-flex flex-column justify-center align-center" action="/modules/contactForm.php" method="POST">
                         <div>
@@ -203,10 +207,10 @@
       </div>
       <div class="modal-body px-4">
             <section class="d-flex align-center flex-row justify-center cityMain">
-              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Москва</p></div>
-              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Санкт-Петербург</p></div>
-              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Нижний Новгород</p></div>
-              <div class="col-3"><p class="cityPick text-start sub-header-font text-black">Мытищи</p></div>
+              <div class="col-3"><p class="cityPick text-start amiko-font text-black">Москва</p></div>
+              <div class="col-3"><p class="cityPick text-start amiko-font text-black">Санкт-Петербург</p></div>
+              <div class="col-3"><p class="cityPick text-start amiko-font text-black">Нижний Новгород</p></div>
+              <div class="col-3"><p class="cityPick text-start amiko-font text-black">Мытищи</p></div>
             </section>
       </div>
     </div>

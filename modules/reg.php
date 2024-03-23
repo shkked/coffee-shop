@@ -11,4 +11,4 @@ $password = md5($password . "ground-black");
 $conn -> query("INSERT INTO `users` (`users_name`, `users_username`, `users_email`, `users_pass`, `users_role`) VALUES ('$fullName', '$userName', '$userEmail', '$password', 2)");
 $conn -> close();
 
-header('Location: /ground-black');
+header('Location: /');

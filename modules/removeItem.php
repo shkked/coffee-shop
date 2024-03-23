@@ -7,4 +7,4 @@ $idItems = (int)$idItem;
 echo $idItems;
 $conn -> query("DELETE FROM `items` WHERE `items_id` = '$idItems'");
 
-header("Location: /ground-black/pages/catalog.php");
+header("Location: /pages/catalog.php");
