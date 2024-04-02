@@ -3,8 +3,11 @@
 include('db.php');
 
 $nameItem = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
+$articleItem = filter_var(trim($_POST['article']), FILTER_SANITIZE_STRING);
 $imgItem = filter_var(trim($_POST['img']), FILTER_SANITIZE_STRING);
+$purposeItem = filter_var(trim($_POST['purpose']), FILTER_SANITIZE_STRING);
 $descItem = filter_var(trim($_POST['desc']), FILTER_SANITIZE_STRING);
+$subdescItem = filter_var(trim($_POST['subdesc']), FILTER_SANITIZE_STRING);
 $countItem = filter_var(trim($_POST['count']), FILTER_SANITIZE_STRING);
 $priceItem = filter_var(trim($_POST['price']), FILTER_SANITIZE_STRING);
 $densityItem = filter_var(trim($_POST['density']), FILTER_SANITIZE_STRING);
@@ -44,10 +47,50 @@ echo $densityItem;
 echo "</br>";
 echo $acidityItem;
 echo "</br>";
+echo $purposeItem;
+echo "</br>";
+echo $subdescItem;
+echo "</br>";
+echo $articleItem;
+echo "</br>";
 
 
 
-$conn -> query("INSERT INTO `items` (`items_name`, `items_img`, `items_description`, `items_category`, `items_count`, `items_price`, `items_density`, `items_acidity`, `items_rating`, `items_country`, `items_taste`, `items_method`, `items_available`) VALUES ('$nameItem', '$imgItem', '$descItem', '$categoryItems', '$countItem', '$priceItem', '$densityItem', '$acidityItem', '$ratingItem', '$countryItem', '$tasteItem', '$methodItem', '$availableItem');");
+$conn -> query("INSERT INTO `items` (
+    `items_article`,
+    `items_name`, 
+    `items_img`, 
+    `items_description`, 
+    `items_subdesc`,
+    `items_category`, 
+    `items_count`, 
+    `items_price`, 
+    `items_density`, 
+    `items_acidity`, 
+    `items_rating`, 
+    `items_country`, 
+    `items_taste`, 
+    `items_method`, 
+    `items_purpose`,
+    `items_available`
+) VALUES (
+    '$articleItem',
+    '$nameItem', 
+    '$imgItem', 
+    '$descItem', 
+    '$subdescItem',
+    '$categoryItems', 
+    '$countItem', 
+    '$priceItem', 
+    '$densityItem', 
+    '$acidityItem', 
+    '$ratingItem', 
+    '$countryItem', 
+    '$tasteItem', 
+    '$methodItem', 
+    '$purposeItem',
+    '$availableItem'
+);");
 $conn -> close();
 
 // header('Location: /pages/catalog.php');

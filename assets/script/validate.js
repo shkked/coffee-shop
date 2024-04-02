@@ -55,10 +55,10 @@
           }
           if(name && phone && email && pass){
             console.log('form submitted');
-            form.submit();
           }
         };
-        validationInputs();
+        form.submit();
+        // validationInputs();
       form.classList.add('was-validated')
     }, false)
 

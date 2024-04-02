@@ -12,6 +12,7 @@
 
 
         <div class="container-user">
+            <!-- Смена пароля -->
         <div class="modal fade" id="changePass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content contact-form">
@@ -20,17 +21,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/changePass.php" method="GET" class="row g-3 needs-validation">
+      <form action="/modules/changePass.php" method="POST" class="row g-3 needs-validation">
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Старый пароль</label>
-            <input type="text" name="oldpass" class="form-control" id="validationCustom02" required>
+            <label for="oldpass" class="form-label">Старый пароль</label>
+            <input type="text" name="oldpass" class="form-control" id="oldpass" required>
             <div class="valid-feedback">
             Looks good!
             </div>
         </div>
         <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Новый пароль</label>
-            <input type="text" name="newpass" class="form-control" id="validationCustom02" required>
+            <label for="newpass" class="form-label">Новый пароль</label>
+            <input type="text" name="newpass" class="form-control" id="newpass" required>
             <div class="valid-feedback">
             Looks good!
             </div>
@@ -55,12 +56,12 @@
                     $conn -> close();
                     if($user):
                 ?> 
-                <div class="row d-flex flex-column align-center acc-info">
-                    <h1 class="h2-title nav-link-font text-black text-start"><strong>Ваши данные</strong></h1>
-                    <p>Ваше имя: <span><?php echo $user['users_name'];?></span></p>
-                    <p>Ваш username: <span><?php echo $user['users_username'];?></span></p>
-                    <p>Ваш email: <span><?php echo $user['users_email'];?></span></p>
-                    <div class="col-4">
+                <div class="row ms-0 d-flex flex-column align-center acc-info">
+                    <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши данные</strong></h2>
+                    <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
+                    <p class="px-0">Ваш номер телефона: <span><?php echo $user['users_tel'];?></span></p>
+                    <p class="px-0">Ваш email: <span><?php echo $user['users_email'];?></span></p>
+                    <div class="col-4 px-0">
                         <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
                     </div>
                 </div>

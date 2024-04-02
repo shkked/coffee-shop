@@ -6,6 +6,7 @@
     <title>Каталог</title>
     <?php include("../modules/links.php") ?>
     <script defer src="../assets/script/ranges.js"></script>
+    <script defer src="../assets/script/catalogData.js"></script>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>
@@ -30,6 +31,13 @@
     </div>
   </div>
   <div class="col-md-4">
+    <label for="article" class="form-label">Артикул</label>
+    <input type="text" name="article" class="form-control" id="article" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Изображение</label>
     <input type="file" name="img" class="form-control" id="validationCustom01" required>
     <div class="valid-feedback">
@@ -44,57 +52,71 @@
     </div>
   </div>
   <div class="col-md-4">
+    <label for="subdesc" class="form-label">Краткое описание</label>
+    <input type="text" name="subdesc" class="form-control" id="subdesc" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="purpose" class="form-label">Назначение</label>
+    <input type="text" name="purpose" class="form-control" id="purpose" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Количество</label>
-    <input type="text" name="count" class="form-control" id="validationCustom02" required>
+    <input type="number" name="count" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Цена</label>
-    <input type="text" name="price" class="form-control" id="validationCustom02" required>
+    <input type="number" name="price" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Плотность</label>
-    <input type="value" name="density" class="form-control" id="validationCustom02" required>
+    <input type="number" name="density" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Кислотность</label>
-    <input type="value" name="acidity" class="form-control" id="validationCustom02" required>
+    <input type="number" name="acidity" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Рейтинг</label>
-    <input type="value" name="rating" class="form-control" id="validationCustom02" required>
+    <input type="number" name="rating" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Регион</label>
-    <input type="value" name="country" class="form-control" id="validationCustom02" required>
+    <input type="text" name="country" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Вкус</label>
-    <input type="value" name="taste" class="form-control" id="validationCustom02" required>
+    <input type="text" name="taste" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Способ обработки</label>
-    <input type="value" name="method" class="form-control" id="validationCustom02" required>
+    <input type="text" name="method" class="form-control" id="validationCustom02" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -103,8 +125,8 @@
     <label for="validationCustom02" class="form-label">Товар доступен</label>
     <select class="form-select" name="available" id="validationCustom02">
       <option selected disabled hidden>Выбрать категорию</option>
-      <option value="true">Да</option>
-      <option value="false">Нет</option>
+      <option value="1">Да</option>
+      <option value="2">Нет</option>
   </select>
     <div class="valid-feedback">
       Looks good!
@@ -128,7 +150,7 @@
       <?php endwhile; ?>
 
 
-</select>
+    </select>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -296,15 +318,36 @@
                       </button>
                     </div>
                     <div>
-                      <p class="sub-header-font">Показано товаров: <span class="number-result underlined">900</span></p>
+                      <?php 
+                  include('../modules/db.php');
+                  if(isset($_GET['id'])):
+                    $param = $_GET['id'];
+                    $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1 AND `items_category` = '$param'");
+                  else:
+                    $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1");
+                  endif;
+                  $conn -> close();
+                      ?>
+                      <p class="sub-header-font">Показано товаров: <span class="number-result underlined"><?= $massItem -> num_rows ?></span></p>
                     </div>
                   </div>
                 </div>
                 <div class="catalog-items mt-4">
+                <?php 
+                  include('../modules/db.php');
+                  if(isset($_GET['id'])):
+                    $param = $_GET['id'];
+                    $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1 AND `items_category` = '$param'");
+                  else:
+                    $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1");
+                  endif;
+                  $conn -> close();
+                  while($arrItems = $massItem -> fetch_assoc()):
+                  ?>
                 <div class="card" style="width: 19rem;">
                 <div class="ps-4 pt-4 pe-4">
                   <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-                    <img src="/assets/img/espresso-main.png" class="card-img-top" alt="...">
+                    <img src="/assets/img/<?= $arrItems['items_img'] ?>" class="card-img-top" alt="...">
                     <div class="favorite">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                           <circle cx="17" cy="17" r="17" fill="white"/>
@@ -315,14 +358,14 @@
                 </div>
                 <div class="container-card">
                   <div class="card-body">
-                      <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: 12311</h6>
-                      <h5 class="card-title">Эфиопия Иргачефф нат</h5>
-                      <p class="card-text">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута</p>
+                      <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: <?= $arrItems['items_article'] ?></h6>
+                      <h5 class="card-title"><?= $arrItems['items_name'] ?></h5>
+                      <p class="card-text"><?= $arrItems['items_subdesc'] ?></p>
                       <div class="card-ranges">
                           <label for="toxic" class="form-label amiko-font card-subtitle" style="color: #070707;">Кислотность</label>
-                            <input type="range" class="form-range range-bg" id="toxic" value="80" disabled>
+                            <input type="range" class="form-range range-bg" id="toxic" value="<?= $arrItems['items_acidity'] ?>" disabled>
                           <label for="disabledRange" class="form-label amiko-font card-subtitle" style="color: #070707;">Плотность</label>
-                            <input type="range" class="form-range" id="disabledRange" disabled>
+                            <input type="range" class="form-range" id="disabledRange" value="<?= $arrItems['items_density'] ?>" disabled>
                       </div>
                       <div class="d-flex flex-row align-items-center justify-content-between mt-3 pe-4">
                         <a href="#" class="amiko-font" style="text-align: center; color: black; font-size: 14px; font-style: normal; font-weight: 400;line-height: normal;">в зернах 
@@ -345,12 +388,12 @@
                           <div class="d-flex flex-column align-items-center me-3">
                             <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px">250 г.</p>
                             <div class="line"></div>
-                            <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px">599 ₽</p>
+                            <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px"><?= $arrItems['items_price'] ?> ₽</p>
                           </div>
                           <div class="d-flex flex-column align-items-center">
                             <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">1000 г.</p>
                             <div class="line" style="background-color: rgba(0, 0, 0, 0.50)"></div>
-                            <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">2039 ₽</p>
+                            <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px"><?php echo $arrItems['items_price']*4 ?> ₽</p>
                           </div>
                         </div>
                         <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center">Купить</a>
@@ -358,6 +401,9 @@
                   </div>
                 </div>
     </div>
+                  <?php 
+                  endwhile;
+                  ?>
                 </div>
             </section>
     </main>

@@ -81,7 +81,7 @@ main {
   height: 39px;
 }
 
-.amiko-font, .acc-info p, .item_info .table_property th, .item_info .table_property td, .how_make .make_txt p, .cart-buttons .promo, .cart .cart-item .quantity #value, .contact-form textarea, .contact-form select, .contact-form input, .card {
+.amiko-font, .item_info .table_property th, .item_info .table_property td, .how_make .make_txt p, .cart-buttons .promo, .cart .cart-item .quantity #value, .contact-form textarea, .contact-form select, .contact-form input, .card {
   font-family: "Amiko", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -358,8 +358,16 @@ h1 {
   margin-bottom: 48px;
   margin-top: 48px;
 }
+.catalog .active-category {
+  background-color: black;
+  color: white !important;
+}
+.catalog .active-category p, .catalog .active-category img {
+  color: white !important;
+}
 .catalog .why-we-div:hover {
   cursor: pointer !important;
+  border: 1px solid black;
 }
 .catalog .catalog-filters .container-range {
   position: relative;
@@ -545,7 +553,7 @@ h1 {
   font-weight: bold;
 }
 
-.item_info .item_text .amiko-font, .item_info .item_text .acc-info p, .acc-info .item_info .item_text p, .item_info .item_text .table_property th, .item_info .table_property .item_text th, .item_info .item_text .table_property td, .item_info .table_property .item_text td, .item_info .item_text .card, .item_info .item_text .contact-form input, .contact-form .item_info .item_text input, .item_info .item_text .contact-form select, .contact-form .item_info .item_text select, .item_info .item_text .contact-form textarea, .contact-form .item_info .item_text textarea, .item_info .item_text .cart .cart-item .quantity #value, .cart .cart-item .quantity .item_info .item_text #value, .item_info .item_text .cart-buttons .promo, .cart-buttons .item_info .item_text .promo, .item_info .item_text .how_make .make_txt p, .how_make .make_txt .item_info .item_text p {
+.item_info .item_text .amiko-font, .item_info .item_text .table_property th, .item_info .table_property .item_text th, .item_info .item_text .table_property td, .item_info .table_property .item_text td, .item_info .item_text .card, .item_info .item_text .contact-form input, .contact-form .item_info .item_text input, .item_info .item_text .contact-form select, .contact-form .item_info .item_text select, .item_info .item_text .contact-form textarea, .contact-form .item_info .item_text textarea, .item_info .item_text .cart .cart-item .quantity #value, .cart .cart-item .quantity .item_info .item_text #value, .item_info .item_text .cart-buttons .promo, .cart-buttons .item_info .item_text .promo, .item_info .item_text .how_make .make_txt p, .how_make .make_txt .item_info .item_text p {
   color: black;
   font-size: 16px;
 }
@@ -584,7 +592,15 @@ h1 {
   cursor: pointer !important;
 }
 
-.acc-info p {
+.acc-info h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.acc-info p, .acc-info span {
+  font-family: "Amiko", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   font-size: 18px;
   color: black;
 }

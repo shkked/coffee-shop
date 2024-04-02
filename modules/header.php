@@ -85,7 +85,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation-reg" novalidate>
+      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation-reg">
         <div class="col-md-4">
           <label for="validationName" class="form-label">Имя</label>
           <input type="text" name="name" class="form-control" id="validationName"
@@ -100,7 +100,7 @@
         </div>
         <div class="col-md-4">
           <label for="validationPhone" class="form-label">Номер телефона</label>
-          <input type="tel" name="tel" class="form-control" id="validationPhone" 
+          <input type="text" name="tel" class="form-control" id="validationPhone" 
           required
           placeholder="+7 (999) 999-99-99"
           title="Номер телефона">
