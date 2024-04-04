@@ -21,17 +21,17 @@
             <p class="amiko-font w-75" style="font-size: 13px">
             Плотный кофе со вкусом жареных орехов, печенья и нуги
             </p>
-            <button type="button" class="my-btn btn text-center sub-header-font">Купить</button>
+            <a href="/pages/catalog.php" class="my-btn btn py-0 text-center sub-header-font d-flex align-items-center justify-content-center">Купить</a>
           </div>
         </div>
         <div class="info-right d-flex justify-content-center align-items-center">
           <img src="/assets/img/espresso-main.png" alt="espresso">
         </div>
         </section>
-        <section>
-          <div class="d-flex flex-row justify-content-between align-items-center">
+        <section class="articles-section">
+          <div class="d-flex flex-row justify-content-between align-items-center ">
             <h2 class="h2-title nav-link-font">Последние статьи</h2>
-            <a href="#" class="text-dark underlined sub-header-font">Посмотреть все</a>
+            <a href="/pages/articles.php" class="text-dark underlined sub-header-font">Посмотреть все</a>
           </div>
           <div class="d-flex flex-row justify-content-between align-items-center">
             <div class="d-flex flex-column" style="max-width: 230px">
@@ -47,7 +47,7 @@
               </div>
             </div>
 
-</div>
+          </div>
         </section>
         <section style="margin-bottom: 140px">
           <div class="d-flex flex-row justify-content-between align-items-center">

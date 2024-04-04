@@ -1,0 +1,46 @@
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container-user{
+        max-width: 740px !important;
+    }
+    .main-header{
+        .logo{
+            width: 100px;
+            height: auto;
+        }
+    }
+    .nav-link-font{
+        font-size: 13px !important;
+    }
+    .sub-header-font{
+        font-size: 12px !important;
+    }
+    .h2-title{
+        // font-size: 32px !important;
+    }   
+    .info-left{
+        .nav-link-font{
+            font-size: 30px !important;
+        }
+    }
+    .header-btns{
+        .btn{
+            width: 30px;
+            height: 30px;
+            padding: 6px;
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    
+}
+@media screen and (min-width: 1201px) {
+    .header-btns{
+        .btn{
+            min-height: 39px;
+        }
+    }
+}

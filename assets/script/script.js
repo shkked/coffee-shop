@@ -2,6 +2,9 @@
 let editAdmin = false;
 let myModal = new bootstrap.Modal(document.getElementById('pickerCity'));
 let contactModal = new bootstrap.Modal(document.getElementById('contactus'));
+if(localStorage.getItem('current_city') !== null){
+    document.querySelector('.city-current').innerHTML = localStorage.getItem('current_city');
+}
 // if(document.querySelector('#contactUs')){
 //     document.querySelector('#contactUs').addEventListener('submit', function(e){
 //         e.preventDefault();
@@ -24,6 +27,7 @@ if(document.querySelector('.editItem')){
 }
 document.querySelectorAll('.cityPick').forEach(item => item.addEventListener('click', (e) => {
    document.querySelector('.city-current').innerHTML = e.target.innerHTML;   
+   localStorage.setItem('current_city', e.target.innerHTML);
    myModal.hide();
 }))
 

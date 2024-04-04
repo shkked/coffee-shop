@@ -1,5 +1,6 @@
 @import "_vars";
 @import "_splide";
+@import "_media";
 
 *{
     padding: 0;
@@ -663,6 +664,24 @@ h1{
         // @extend .amiko-font;
         // color: black;
         // font-size: 18px;
+    }
+}
+.article-card{
+    .article-img{
+        background-color: #BCB5A6; 
+        border-top-left-radius: 10px; 
+        border-top-right-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 230px;
+        }
+    }
+    .article-body{
+        background-color: white; 
+        border-bottom-left-radius: 10px; 
+        border-bottom-right-radius: 10px;
     }
 }
 footer{

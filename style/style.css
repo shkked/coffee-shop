@@ -7,6 +7,34 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .container-user {
+    max-width: 740px !important;
+  }
+  .main-header .logo {
+    width: 100px;
+    height: auto;
+  }
+  .nav-link-font, .contact-form h1, .why-we .why-we-div p {
+    font-size: 13px !important;
+  }
+  .sub-header-font, .account-header p, .account-header a, .how_make .make_txt li, .catalog .catalog-categories > div, .catalog .catalog-filters .form-select, .catalog .catalog-filters .form-control, .clear-btn, .contact-form button:not(.btn-close), .contact-form label, .fav-btn, .my-btn {
+    font-size: 12px !important;
+  }
+  .info-left .nav-link-font, .info-left .contact-form h1, .contact-form .info-left h1, .info-left .why-we .why-we-div p, .why-we .why-we-div .info-left p {
+    font-size: 30px !important;
+  }
+  .header-btns .btn {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .header-btns .btn {
+    min-height: 39px;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -604,6 +632,23 @@ h1 {
   font-size: 18px;
   color: black;
 }
+.article-card .article-img {
+  background-color: #BCB5A6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article-card .article-img img {
+  width: 230px;
+}
+.article-card .article-body {
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 footer {
   height: 356px;
   background-color: black;

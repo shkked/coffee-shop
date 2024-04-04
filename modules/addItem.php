@@ -93,4 +93,4 @@ $conn -> query("INSERT INTO `items` (
 );");
 $conn -> close();
 
-// header('Location: /pages/catalog.php');
+header('Location: /pages/catalog.php');
