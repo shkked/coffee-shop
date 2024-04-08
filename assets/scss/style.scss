@@ -109,6 +109,11 @@ main{
 .text-italic{
     font-style: italic;
 }
+.active-favorite{
+    svg>path{
+        fill: red !important;
+    }   
+}
 .cityMain{
     p:hover{
         @extend .underlined;
@@ -380,6 +385,7 @@ h1{
                 color: white !important;
             }
         }
+        
         .why-we-div:hover{
             cursor: pointer !important;
             border: 1px solid black;
@@ -517,7 +523,7 @@ h1{
         }
     }
 }
-.cart{
+.cart-section{
     .cart-item{
         background-color: white;
         border-radius: 10px;
@@ -528,6 +534,7 @@ h1{
         .delete{
             cursor: pointer;
             position: absolute;
+            width: auto;
             img{
                 position: relative;
                 top: -80px;
@@ -539,6 +546,7 @@ h1{
         .cart-img-top{
             width: 150px;
             height: 150px;
+            @extend .pointer;
         }
         .article{
             font-size: 11px;

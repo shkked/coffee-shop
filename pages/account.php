@@ -47,7 +47,7 @@
 
             <section>
                 <h1 class="text-start h2-title nav-link-font mt-5">Личный кабинет</h1>
-                <?php 
+                <?php
                     include("../modules/db.php");
                     $id = $_COOKIE['id'];
                     $result = $conn -> query("SELECT * FROM `users` WHERE `users_id` = '$id'");
@@ -55,7 +55,7 @@
                     $user = $result -> fetch_assoc();
                     $conn -> close();
                     if($user):
-                ?> 
+                ?>
                 <div class="row ms-0 d-flex flex-column align-center acc-info">
                     <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши данные</strong></h2>
                     <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
@@ -65,15 +65,43 @@
                         <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
                     </div>
                 </div>
-                <?php 
+                <?php
                 else:
                 ?>
                 <div class="d-flex flex-column align-center">
                     <p><strong>Ваши данные не найдены!</strong></p>
                 </div>
-                <?php 
+                <?php
                 endif;
                 ?>
+                <div class="row ms-0 d-flex flex-column align-center acc-info">
+                    <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши заказы</strong></h2>
+                    
+                    <div class="col-12 d-flex flex-row justify-content-between">
+                    <?php
+                        include("../modules/db.php");
+                        $id = $_COOKIE['id'];
+                        $result = $conn -> query("SELECT * FROM `order-info` WHERE `order_user` = '$id'");
+                        $order_info = $result -> fetch_assoc();
+                        $conn -> close();
+                        if($order_info):
+                    ?>
+                        <div class="col-4 d-flex flex-column align-items-start">
+                            <p class="px-0">Номер заказа: <span><?php echo $user['order_id'];?></span></p>
+                            <p class="px-0">Стоимость заказа: <span><?php echo $user['order_price'];?></span></p>
+                        </div>
+                        <?php
+                        else:
+                        ?>
+                        <p class="px-0">Заказы не найдены</p>
+                        <?php
+                        endif;
+                        ?>
+                    </div>
+                    <div class="col-4 px-0">
+                        <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
+                    </div>
+                </div>
             </section>
         </div>
 

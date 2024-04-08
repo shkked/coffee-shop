@@ -106,6 +106,13 @@
           </div>
         </div>
         <div class="col-md-4">
+          <label for="validationImg" class="form-label">Изображение</label>
+          <input type="file" name="img" class="form-control" id="validationImg">
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+        </div>
+        <div class="col-md-4">
           <label for="validationPhone" class="form-label">Номер телефона</label>
           <input type="text" name="tel" class="form-control" id="validationPhone" 
           required
@@ -148,25 +155,25 @@
     </div>
   </div>
     </div>
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content contact-form">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Авторизация</h1>
+        <h1 class="modal-title fs-5" id="authModal">Авторизация</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       <form action="/modules/auth.php" method="GET" class="row g-3 needs-validation">
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Почта</label>
-    <input type="email" name="email" class="form-control" id="validationCustom02" required>
+    <label for="email" class="form-label">Почта</label>
+    <input type="email" name="email" class="form-control" id="email" required>
     <div class="valid-feedback">
       Отлично!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Пароль</label>
-    <input type="password" name="pass" class="form-control" id="validationCustom02" required>
+    <label for="pass" class="form-label">Пароль</label>
+    <input type="password" name="pass" class="form-control" id="pass" required>
     <div class="valid-feedback">
       Отлично!
     </div>

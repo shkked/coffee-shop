@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
     <?php include("../modules/links.php") ?>
+    <script defer src="../assets/script/cart_render.js"></script>
     <script defer src="../assets/script/cart.js"></script>
 </head>
 <body>
@@ -15,8 +16,8 @@
                 <h1 class="text-start mt-5 h2-title nav-link-font">Корзина</h1>
                 <button type="button" class="clear-btn d-flex align-items-center mb-0 btn sub-header-font">Очистить корзину</и>
             </div>
-            <section class="cart d-flex flex-column">
-                <div class="row cart-item mb-4 d-flex flex-row align-items-center">
+            <section class="cart-section d-flex row flex-column">
+                <!-- <div class="row cart-item mb-4 d-flex flex-row align-items-center">
                     <div class="col-3 p-4 pe-0">
                         <div class="p-3 d-flex justify-content-center align-items-center cart-img-top" style="background-color: #BCB5A6; border-radius: 10px; ">
                             <img class="w-100" src="/assets/img/espresso-main.png" alt="...">
@@ -33,7 +34,17 @@
                         <div class="w-100 px-3 bg-black" style="border-radius: 10px">
                             <div class="quantity d-flex justify-content-between">
                                 <p id="minus" class="quantity-minus button mb-0">-</p>
-                                <input id="value" type="number" name="quantity" value="1" class="text-center" data-product_id="375" data-min="1" data-max="999999" style="width: 50px;margin: 0 10px;">
+                                <input 
+                                    id="value" 
+                                    type="number" 
+                                    name="quantity" 
+                                    value="1" 
+                                    class="text-center quantity-value" 
+                                    data-product_id="375" 
+                                    data-min="1" 
+                                    data-max="999999" 
+                                    style="width: 50px;margin: 0 10px;"
+                                >
                                 <p id="plus" class="quantity-plus button mb-0">+</p>
                             </div>
                         </div>
@@ -44,7 +55,7 @@
                     <div class="delete">
                         <img src="/node_modules/bootstrap-icons/icons/x-circle.svg" alt="">
                     </div>
-                    </div>
+                </div> -->
             </section>
             <div class="d-flex justify-content-between cart-buttons mt-4">
                 <div class="col-4 d-flex flex-column align-items-start">
