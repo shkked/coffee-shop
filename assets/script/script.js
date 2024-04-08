@@ -30,7 +30,3 @@ document.querySelectorAll('.cityPick').forEach(item => item.addEventListener('cl
    localStorage.setItem('current_city', e.target.innerHTML);
    myModal.hide();
 }))
-
-// if(document.querySelector('.imgItem')){
-//     document.querySelector('.imgItem').files[0].name = "";    
-// }

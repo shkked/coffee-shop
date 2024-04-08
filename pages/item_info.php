@@ -38,14 +38,14 @@
                         <div class="item_property col-9 d-flex justify-content-between">
                             <div>
                                 <p class="amiko-font text-black">Кислотность</p>
-                                <input type="range">
+                                <input class="form-range" type="range" value="60" disabled>
                             </div>
                             <div>
                                 <p class="amiko-font text-black">Плотность</p>
-                                <input type="range">
+                                <input class="form-range" type="range" value="60" disabled>
                             </div>
                         </div>
-                        <p class="item_price amiko-font text-black">Цена: <span>2500</span> ₽</p>
+                        <p class="item_price amiko-font text-black">Цена: <span>619</span> ₽</p>
                         <div class="item_buttons col-6">
                             <button class="my-btn w-75">В корзину</button>
                             <button class="fav-btn">

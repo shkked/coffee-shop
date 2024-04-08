@@ -3,6 +3,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .why-we{
+        .why-we-div{
+            width: 150px !important;
+            height: 150px !important;
+        }
+    }
     .container-user{
         max-width: 740px !important;
     }

@@ -56,28 +56,34 @@
                     $conn -> close();
                     if($user):
                 ?>
-                <div class="row ms-0 d-flex flex-column align-center acc-info">
-                    <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши данные</strong></h2>
-                    <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
-                    <p class="px-0">Ваш номер телефона: <span><?php echo $user['users_tel'];?></span></p>
-                    <p class="px-0">Ваш email: <span><?php echo $user['users_email'];?></span></p>
-                    <div class="col-4 px-0">
-                        <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
+                <div class="row ms-0 d-flex flex-row align-center">
+                    <div class="col-4">
+                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 50%; width: 200px; height: 200px; background-color: black;">
+                            <img class="w-75 h-75" src="/assets/img/<?= $user['users_img'] ?>" alt="user-img">
+                        </div>
+                    </div>
+                    <div class="col-6 ms-0 d-flex flex-column align-center acc-info">
+                        <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши данные</strong></h2>
+                        <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
+                        <p class="px-0">Ваш номер телефона: <span><?php echo $user['users_tel'];?></span></p>
+                        <p class="px-0">Ваш email: <span><?php echo $user['users_email'];?></span></p>
+                        <div class="col-4 px-0">
+                            <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
+                        </div>
                     </div>
                 </div>
                 <?php
                 else:
                 ?>
-                <div class="d-flex flex-column align-center">
+                <div class="d-flex flex-column align-center acc-info">
                     <p><strong>Ваши данные не найдены!</strong></p>
                 </div>
                 <?php
                 endif;
                 ?>
-                <div class="row ms-0 d-flex flex-column align-center acc-info">
+                <div class="row ms-0 mt-4 d-flex flex-column align-center acc-info">
                     <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши заказы</strong></h2>
-                    
-                    <div class="col-12 d-flex flex-row justify-content-between">
+                    <div class="col-12 d-flex flex-row justify-content-between acc-info px-0">
                     <?php
                         include("../modules/db.php");
                         $id = $_COOKIE['id'];
@@ -86,7 +92,7 @@
                         $conn -> close();
                         if($order_info):
                     ?>
-                        <div class="col-4 d-flex flex-column align-items-start">
+                        <div class="col-4 d-flex flex-column align-items-start acc-info">
                             <p class="px-0">Номер заказа: <span><?php echo $user['order_id'];?></span></p>
                             <p class="px-0">Стоимость заказа: <span><?php echo $user['order_price'];?></span></p>
                         </div>
@@ -97,9 +103,6 @@
                         <?php
                         endif;
                         ?>
-                    </div>
-                    <div class="col-4 px-0">
-                        <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
                     </div>
                 </div>
             </section>

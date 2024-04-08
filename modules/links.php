@@ -8,3 +8,4 @@
     <link rel="stylesheet" href="/style/style.css">
     <script defer src="/assets/script/script.js"></script>
     <script defer src="/assets/script/validate.js"></script>
+    <script defer src="/assets/script/card-ranges.js"></script>
