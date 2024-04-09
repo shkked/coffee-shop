@@ -24,10 +24,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form id="addItem" action="../modules/addItem.php" method="POST" class="row g-3 needs-validation" novalidate>
+      <form enctype="multipart/form-data" id="addItem" action="../modules/addItem.php" method="POST" class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Название</label>
-    <input type="text" name="name" class="form-control" id="validationCustom01" required>
+    <label for="name" class="form-label">Название</label>
+    <input type="text" name="name" class="form-control" id="name" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -40,15 +40,23 @@
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Изображение</label>
-    <input type="file" name="img" class="form-control" id="validationCustom01" required>
+    <label for="img" class="form-label">Изображения</label>
+    <input 
+      type="file" 
+      multiple 
+      accept="image/*" 
+      name="img[]" 
+      class="form-control" 
+      id="img" 
+      required
+    >
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Описание</label>
-    <input type="text" name="desc" class="form-control" id="validationCustom02" required>
+    <label for="desc" class="form-label">Описание</label>
+    <input type="text" name="desc" class="form-control" id="desc" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -68,64 +76,64 @@
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Количество</label>
-    <input type="number" name="count" class="form-control" id="validationCustom02" required>
+    <label for="count" class="form-label">Количество</label>
+    <input type="number" name="count" class="form-control" id="count" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Цена</label>
-    <input type="number" name="price" class="form-control" id="validationCustom02" required>
+    <label for="price" class="form-label">Цена</label>
+    <input type="number" name="price" class="form-control" id="price" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Плотность</label>
-    <input type="number" name="density" class="form-control" id="validationCustom02" required>
+    <label for="density" class="form-label">Плотность</label>
+    <input type="number" name="density" class="form-control" id="density" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Кислотность</label>
-    <input type="number" name="acidity" class="form-control" id="validationCustom02" required>
+    <label for="acidity" class="form-label">Кислотность</label>
+    <input type="number" name="acidity" class="form-control" id="acidity" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Рейтинг</label>
-    <input type="number" name="rating" class="form-control" id="validationCustom02" required>
+    <label for="rating" class="form-label">Рейтинг</label>
+    <input type="number" name="rating" class="form-control" id="rating" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Регион</label>
-    <input type="text" name="country" class="form-control" id="validationCustom02" required>
+    <label for="country" class="form-label">Регион</label>
+    <input type="text" name="country" class="form-control" id="country" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Вкус</label>
-    <input type="text" name="taste" class="form-control" id="validationCustom02" required>
+    <label for="taste" class="form-label">Вкус</label>
+    <input type="text" name="taste" class="form-control" id="taste" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Способ обработки</label>
-    <input type="text" name="method" class="form-control" id="validationCustom02" required>
+    <label for="method" class="form-label">Способ обработки</label>
+    <input type="text" name="method" class="form-control" id="method" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Товар доступен</label>
-    <select class="form-select" name="available" id="validationCustom02">
+    <label for="available" class="form-label">Товар доступен</label>
+    <select class="form-select" name="available" id="available">
       <option selected disabled hidden>Выбрать категорию</option>
       <option value="1">Да</option>
       <option value="2">Нет</option>
@@ -174,39 +182,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form id="addItem" action="../modules/addCat.php" method="POST" class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">Изображение</label>
-          <input type="file" name="img" class="form-control" id="validationCustom01" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">Название</label>
-          <input type="text" name="name" class="form-control" id="validationCustom01" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Добавить</button>
-  </div>
-</form>
-      </div>
-    </div>
-  </div>
-    </div>
-    <!-- Удаление -->
-        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content contact-form">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Удаление</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form id="addItem" action="../modules/addCat.php" method="POST" class="row g-3 needs-validation" novalidate>
+      <form id="addCat" action="../modules/addCat.php" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">Изображение</label>
           <input type="file" name="img" class="form-control" id="validationCustom01" required>
@@ -234,41 +210,41 @@
               <?php if(isset($_COOKIE['role'])): ?>
                 <?php if($_COOKIE['role'] == 1): ?>
               <div class="admin-btn row d-flex justify-content-center">
-                <div class="col-3">
+                <div class="col-5 col-sm-3">
                   <button type="button" class="w-100 btn my-btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItem">
                   Добавить товар
                 </button>
                 </div>
-                <div class="col-3">
+                <div class="col-5 col-sm-3">
                   <button type="button" class="w-100 btn my-btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCat">
                   Добавить категорию
                 </button>
                 </div>
-                <div class="col-3">
+                <!-- <div class="col-3">
                   <button type="button" class="w-100 btn my-btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
                   Удалить товар
-                </button>
-                </div>
+                </button> -->
+                <!-- </div> -->
                 </div>
                 <?php endif; ?>
                 <?php endif; ?>
                 <h1 class="nav-link-font text-black h2-title text-start">Каталог</h1>
-                <div class="why-we row">
+                <div class="why-we row d-flex flex-wrap">
                   <?php 
                   include('../modules/db.php');
                   $mass = $conn -> query('SELECT * FROM `categories`');
                   $conn -> close();
                   while($arr = $mass -> fetch_assoc()):
                   ?>
-                <div class="why-we-div col-3 me-4">
+                <div class="why-we-div col-3 me-2 me-sm-4 mt-2 mt-sm-0">
                   <img src="../assets/icons/<?= $arr['cat_img']; ?>" alt="">
                   <p><?= $arr['cat_name']; ?></p>
                 </div>
                 <?php endwhile; ?>
                 </div>
                 <div class="catalog-filters mt-4 row d-flex justify-content-between">
-                  <div class="col-5 ps-0 price d-flex flex-column">
-                    <div class="col-9 mx-0">
+                  <div class="col-sm-5 col-12 px-0 price d-flex flex-column">
+                    <div class="col-sm-9 mx-0">
                       <label for="priceRange" class="form-label sub-header-font">Цена, руб</label>
                       <div class="d-flex mb-2">
                         <input class="form-control me-4" type="number" id="range1" type="text" placeholder="0">
@@ -280,7 +256,7 @@
                           <input type="range" value="10000" min="0" max="10000" step="100" id="slider-2" oninput="slideTwo()">
                       </div>
                     </div>
-                    <div class="col-10 mt-3 d-flex flex-row justify-content-between">
+                    <div class="col-12 col-sm-10 px-0 mt-3 d-flex flex-row justify-content-between">
                       <div class="col-5">
                         <select class="form-select"  aria-label="Default select example">
                           <option selected disabled hidden>Сортировка</option>
@@ -299,8 +275,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-6 d-flex flex-wrap">
-                    <div class="col-4 px-2">
+                  <div class="col-sm-6 col-12 px-0 px-sm-2 d-flex flex-wrap justify-content-between">
+                    <div class="col-5 px-sm-2">
                       <select class="form-select"  aria-label="Default select example">
                               <option selected disabled hidden>Плотность</option>
                               <option value="<30">Низкая</option>
@@ -308,7 +284,7 @@
                               <option value=">60">Высокая</option>
                       </select>
                     </div>
-                    <div class="col-4 px-2">
+                    <div class="col-5 px-sm-2">
                       <select class="form-select"  aria-label="Default select example">
                               <option selected disabled hidden>Кислотность</option>
                               <option value="<30">Низкая</option>
@@ -316,14 +292,14 @@
                               <option value=">60">Высокая</option>
                       </select>
                     </div>
-                    <div class="col-4 px-2">
+                    <div class="col-5 px-sm-2">
                       <select class="form-select" aria-label="Default select example">
                               <option selected disabled hidden>Рейтинг</option>
                               <option value="DESC">По убыванию</option>
                               <option value="ASC">По возрастанию</option>
                       </select>
                     </div>
-                    <div class="col-4 px-2">
+                    <div class="col-5 px-sm-2">
                       <select class="form-select"  aria-label="Default select example">
                               <option selected disabled hidden>Страна произрастания</option>
                               <option value="<30">Низкая</option>
@@ -331,7 +307,7 @@
                               <option value=">60">Высокая</option>
                       </select>
                     </div>
-                    <div class="col-4 px-2">
+                    <div class="col-5 px-sm-2">
                       <select class="form-select"  aria-label="Default select example">
                               <option selected disabled hidden>Способ обработки</option>
                               <option value="<30">Низкая</option>
@@ -341,22 +317,28 @@
                     </div>
                   </div>
                 </div>
-                <div class="row ps-0 flex-column">
+                <div class="row px-0 flex-column">
                   <div class="catalog-categories mt-3 ps-0 row flex-wrap d-flex">
                     <div class="col-auto px-4">
                       Для кофемашины
                     </div>
+                    <div class="col-auto px-4">
+                      Свежемолотый
+                    </div>
+                    <div class="col-auto px-4">
+                      Для эспрессо
+                    </div>
                   </div>
-                  <div class="ps-0 mt-3 d-flex justify-content-between">
-                    <div class="col-4 ps-0">
-                      <button class="clear-btn me-2 sub-header-font px-4 text-white bg-black" style="border-radius: 10px">
+                  <div class="ps-0 mt-3 col-12 d-flex justify-content-between">
+                    <div class="col-12 col-sm-4">
+                      <button class="clear-btn mb-2 col-12 d-flex align-items-center justify-content-center ps-0 me-sm-2 sub-header-font px-sm-4 text-white bg-black" style="border-radius: 10px">
                         Применить
                       </button>
-                      <button class="clear-btn px-4">
+                      <button class="clear-btn col-12 px-4">
                         Сбросить фильтр
                       </button>
                     </div>
-                    <div>
+                    <div class="d-none d-sm-block">
                       <?php 
                   include('../modules/db.php');
                   if(isset($_GET['id'])):
@@ -377,11 +359,26 @@
                   if(isset($_GET['id'])):
                     $param = $_GET['id'];
                     $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1 AND `items_category` = '$param'");
+                    $imgItem = $conn -> query("SELECT * FROM `items_images`");
+                    $allImg = array();
+                    while($row = $imgItem->fetch_assoc()) {
+                        $allImg[] = $row;
+                    }
                   else:
                     $massItem = $conn -> query("SELECT * FROM `items` WHERE `items_available` = 1");
+                    $imgItem = $conn -> query("SELECT * FROM `items_images`");
+                    $allImg = array();
+                    while($row = $imgItem->fetch_assoc()) {
+                        $allImg[] = $row;
+                    }
                   endif;
                   $conn -> close();
                   while($arrItems = $massItem -> fetch_assoc()):
+                    $arrItems['items_img'] = reset(
+                      array_filter($allImg, function($item) use ($arrItems) {
+                        return $item['item_id'] == $arrItems['items_article'];
+                      })
+                    )['item_image'];  
                     include('../modules/card.php');
                   endwhile;
                   ?>

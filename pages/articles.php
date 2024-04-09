@@ -12,11 +12,11 @@
     <main>
         <div class="container-user">
           <!-- Добавление статьи -->
-        <div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="addArticle" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content contact-form">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Написать статью</h1>
+        <h1 class="modal-title fs-5" id="addArticle">Написать статью</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -58,8 +58,8 @@
   </div>
     </div>
     <!-- Просмотр статьи -->
-        <div class="modal fade" id="viewArticle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+        <div class="modal fade" id="viewArticle" tabindex="-1" aria-labelledby="viewArticle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content contact-form">
       <div class="modal-header">
                 <?php 
@@ -71,13 +71,13 @@
                       $conn -> close();
                     endif;
                 ?>
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $activeArticle['articles_name'] ?></h1>
+        <h1 class="modal-title fs-5" id="viewArticle"><?= $activeArticle['articles_name'] ?></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="../assets/img/<?= $activeArticle['articles_img'] ?>" alt="">
-        <p class="amiko-font text-black mb-0" style="word-break: break-word; font-size: 18px;"><?= $activeArticle['articles_text'] ?></p>
-        <p class="amiko-font text-black mb-0 mt-3">Автор: <?= $activeArticle['users_name'] ?></p>
+        <img class="w-100" src="../assets/img/<?= $activeArticle['articles_img'] ?>" alt="">
+        <p class="amiko-font text-black mb-0 mt-4" style="word-break: break-word; font-size: 18px;"><?= $activeArticle['articles_text'] ?></p>
+        <p class="amiko-font text-black mb-0 mt-4">Автор: <?= $activeArticle['users_name'] ?></p>
       </div>
     </div>
   </div>
@@ -86,8 +86,8 @@
                 <?php 
                 if(isset($_COOKIE['role'])):
                 ?>
-            <div class="admin-btn row">
-                <div class="col-3">
+            <div class="admin-btn row d-flex justify-content-center">
+                <div class="col-5 col-sm-3">
                   <button type="button" class="w-100 btn my-btn btn-primary" data-bs-toggle="modal" data-bs-target="#addArticle">
                   Написать статью
                 </button>
@@ -104,22 +104,7 @@
                     $result = $conn -> query($sql);
                     $conn -> close();
                     while($row = $result->fetch_assoc()):
-                    ?>
-                    <a onclick="window.location.href = 'articles.php?id=<?= $row['articles_id'] ?>'" class="pointer" style="text-decoration: none !important">
-                      <div class="d-flex flex-column article-card col-lg-4 col-md-5 col-12">
-                        <div class="article-img">
-                          <img src="/assets/img/<?= $row['articles_img'] ?>" alt="ar-img">
-                        </div>
-                        <div class="p-4 article-body">
-                          <p style="font-weight: bold; font-size: 20px; word-break: break-word" class="amiko-font text-black"><?= $row['articles_name'] ?></p>
-                          <div class="user d-flex flex-row">
-                            <div style="border-radius: 60px; width: 18px; height: 18px; background-color: #BCB5A6"></div>
-                            <p class="ms-2 amiko-font text-black mb-0"><?= $row['users_name'] ?></p>
-                          </div>
-                        </div>
-                      </div>
-                  </a>
-                    <?php 
+                      include('../modules/article-item.php');
                     endwhile;
                     ?>
                 </div>
@@ -127,5 +112,11 @@
         </div>
     </main>
     <?php include ("../modules/footer.php"); ?>
+    <script>
+
+function toArticle(articleId) {
+  window.location.href = "/pages/articles.php?id=" + articleId;
+}
+    </script>
 </body>
 </html>

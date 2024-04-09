@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }))
 });
 // console.log(arrCart);
-
+function toItem(id) {
+  window.location.href = '/pages/item_info.php?id=' + id;
+}
 function emptyCart() {
       document.querySelector('.cart-buttons').classList.add('d-none');
       document.querySelector('.cart-section').closest('.container-user').querySelector('.clear-btn').classList.add('d-none');
@@ -83,7 +85,7 @@ function renderarrCart({acidity, articleNumber, count, density, description, img
   const cartContainer = document.querySelector('.cart-section');
   const arrItem = `<div class="row cart-item mb-4 d-flex flex-row align-items-center" data-item-id="${articleNumber}">
   <div class="col-3 p-4 pe-0">
-      <div class="p-3 d-flex justify-content-center align-items-center cart-img-top" style="background-color: #BCB5A6; border-radius: 10px; ">
+      <div onclick="toItem()" class="p-3 d-flex justify-content-center align-items-center cart-img-top" style="background-color: #BCB5A6; border-radius: 10px; ">
           <img class="w-100" src="${imgSrc}" alt="...">
         </div>
   </div>

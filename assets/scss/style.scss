@@ -6,6 +6,9 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    .admin-btn{
+        
+    }
 }
 main{
     min-height: calc(100vh - 356px) !important;
@@ -125,6 +128,9 @@ body{
 }
 .top-header{
     min-height: 65px;
+    p, span, a{
+        color: black !important;
+    }
     .sub-header-font:not(.account-header>.sub-header-font){
         &:hover{
             text-decoration: underline !important;
@@ -132,6 +138,16 @@ body{
     }
 }
 .main-header{
+    .navbar-toggler{
+        border-color: black;
+        width: 35px;
+        height: 35px;
+        outline: unset;
+        text-shadow: unset;
+        .menu-list{
+            filter: brightness(0) invert(1);
+        }
+    }
     .nav{
         li:nth-child(n):not(:last-child){
             margin-right: 25px;
@@ -141,6 +157,7 @@ body{
                 text-decoration: underline !important;
             }
         }
+        
     }
 }
 header{
@@ -151,11 +168,11 @@ header{
     }
 }
 .info-left, .info-right{
-    width: 48%;
+    // width: 48%;
     min-height: 390px;
     border-radius: 10px;
 }
-.info-right{
+.info-right>div{
     background: white;
 }
 .info-left{
@@ -581,6 +598,7 @@ h1{
         background-color: white;
         border-radius: 10px;
         height: 200px;
+        position: relative;
         .item-name{
             font-size: 16px !important;
         }
@@ -591,7 +609,7 @@ h1{
             img{
                 position: relative;
                 top: -80px;
-                left: 925px;
+                left: 915px;
                 width: 18px;
                 height: 18px;
             }
@@ -654,6 +672,27 @@ h1{
     }
 }
 .item_info{
+    .card-ranges{
+        .wrapper{
+            position: relative;
+            z-index: 5;
+            input[type='range']::-webkit-slider-thumb {
+                z-index: 100 !important;
+                background-color: black;
+            }
+            .progress-tox, .progress-den{
+                    position: absolute;
+                    content:'';
+                    width: 50%;
+                    border-radius: 10px;
+                    height: 8px;
+                    background-color: black;
+                    top: 28%;
+                    z-index: 1;
+            }
+        }
+          
+    }
     .item_text{
         .amiko-font{
             color: black;
@@ -728,6 +767,7 @@ h1{
     }
 }
 .article-card{
+    height: 360px;
     .article-img{
         background-color: #BCB5A6; 
         border-top-left-radius: 10px; 
@@ -735,8 +775,11 @@ h1{
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+        height: 150px;
         img{
-            width: 230px;
+            height: 100%;
+            width: 100%;
         }
     }
     .article-body{
@@ -746,7 +789,7 @@ h1{
     }
 }
 footer{
-    height: 356px;
+    // height: 356px;
     background-color: black;
     color: white;
     h4{
@@ -766,7 +809,7 @@ footer{
         }
     }
     .social-media{
-        margin-right: 300px;
+        // margin-right: 300px;
         a:not(:last-child){
             margin-right: 20px;
         }

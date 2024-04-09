@@ -8,56 +8,119 @@
     <link rel="stylesheet" href="../node_modules/@splidejs/splide/dist/css/splide.min.css">
     <script defer src="../node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
     <script defer src="../assets/script/splide-carousel.js"></script>
+    <script defer src="../assets/script/card-ranges.js"></script>
+    <script defer src="../assets/script/item_info.js"></script>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>
     <main>
         <div class="container-user">
             <section class="item_info">
-                <div class="row d-flex justify-content-between mt-5">
-                    <div class="splide rounded col-5">
-                    <div class="splide__track rounded">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <img class="w-100" src="../assets/img/espresso-main.png" alt="">
-                                </li>
-                                <li class="splide__slide">
-                                    <img class="w-100" src="../assets/img/espresso2.png" alt="">
-                                </li>
-                                <li class="splide__slide">
-                                    <img class="w-100" src="../assets/img/espresso3.png" alt="">
-                                </li>
-                            </ul>
-                    </div>
-                    </div>
-                    <div class="item_text col-6">
-                        <p class="article amiko-font">Артикул: 12321</p>
-                        <h1 class="nav-link-font my-3 text-black h2-title text-start">Эфиопия Иргачефф нат</h1>
-                        <p class="amiko-font">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута</p>
-                        <p class="amiko-font text-black"><span class="item_es underlined" style="font-weight: bold">Для эспрессо</span> / <span class="item_fil">Для фильтра</span> / <span class="item_bot">Кофе в банках</span></p>
-                        <div class="item_property col-9 d-flex justify-content-between">
-                            <div>
-                                <p class="amiko-font text-black">Кислотность</p>
-                                <input class="form-range" type="range" value="60" disabled>
-                            </div>
-                            <div>
-                                <p class="amiko-font text-black">Плотность</p>
-                                <input class="form-range" type="range" value="60" disabled>
+            <?php
+                $id = $_GET["id"];
+                include('../modules/db.php');
+
+                $activeItem = $conn -> query("SELECT * FROM items WHERE `items_article` = '$id'");
+                $iteminfo = $activeItem -> fetch_assoc();
+                $imgId = $iteminfo['items_article'];
+                $imgItem = $conn -> query("SELECT * FROM items_images WHERE `item_id` = '$imgId'");
+                $allImg = array();
+                while($row = $imgItem->fetch_assoc()) {
+                    $allImg[] = $row;
+                };
+
+                $activeItem = array_merge(
+                    $activeItem -> fetch_assoc(), 
+                    $allImg
+                );
+                $allImages = []; // Создаем пустой массив для хранения всех item_image
+
+                // Предполагаем, что $arr - это уже существующий массив с данными товара и изображениями
+                foreach ($allImg as $key => $value) {
+                    // Проверяем, является ли значение массивом и содержит ли ключ item_image
+                    if (is_array($value) && isset($value['item_image'])) {
+                        $allImages[] = $value['item_image']; // Добавляем item_image в массив всех изображений
+                    }
+                }
+                // echo $allImages;
+                // print_r($allImages);
+                // print_r($activeItem);
+                $conn -> close();
+            ?>
+                <div class="row d-flex flex-column flex-sm-row justify-content-between mt-5">
+                    <div class="col-12 col-sm-6 d-flex justify-content-start">
+                        <div class="splide rounded">
+                            <div class="splide__track rounded">
+                                    <ul class="splide__list">
+                                    <?php 
+                                    foreach($allImages AS $key => $value):
+                                    ?>
+                                        <li class="splide__slide">
+                                            <img class="w-100 card-img-top" src="../assets/img/<?= $value ?>" alt="">
+                                        </li>
+                                        <?php endforeach; ?>                            </ul>
                             </div>
                         </div>
-                        <p class="item_price amiko-font text-black">Цена: <span>619</span> ₽</p>
-                        <div class="item_buttons col-6">
-                            <button class="my-btn w-75">В корзину</button>
-                            <button class="fav-btn">
-                                <img class="text-black" src="../node_modules/bootstrap-icons/icons/heart.svg" alt="">
-                            </button>
+
+                    </div>
+                    <div class="item_text col-12 mt-4 mt-sm-0 col-sm-6">
+                        <p class="article card-subtitle amiko-font">Артикул: <?= $iteminfo['items_article'] ?></p>
+                        <h1 class="nav-link-font card-title my-3 text-black h2-title text-start"><?= $iteminfo['items_name'] ?></h1>
+                        <p class="amiko-font"><?= $iteminfo['items_subdesc'] ?></p>
+                        <p class="amiko-font text-black">
+                          <span class="item_es underlined" style="font-weight: bold">
+                            <?= $iteminfo['items_purpose'] ?>
+                          </span> / 
+                          <span class="item_fil">Для фильтра</span>
+                          / 
+                          <span class="item_bot">Кофе в банках</span>
+                        </p>
+                        <div class="item_property card-ranges col-9 d-flex justify-content-between">
+                          <div class="d-flex col-5 flex-column">
+                            <label for="toxic" class="form-label amiko-font text-black card-subtitle">Кислотность</label>
+                            <div class="wrapper">
+                                <input 
+                                type="range" 
+                                class="form-range toxic-range" 
+                                id="toxic" 
+                                value="<?= $iteminfo['items_acidity'] ?>" 
+                                disabled
+                                >
+                                <div class="progress-tox"></div>
+                            </div>
+                          </div>
+                          <div class="d-flex col-5 flex-column">
+                            <label for="density" class="form-label amiko-font text-black card-subtitle">Плотность</label>
+                            <div class="wrapper">
+                                <input 
+                                type="range" 
+                                class="form-range" 
+                                id="density" 
+                                value="<?= $iteminfo['items_density'] ?>" 
+                                disabled
+                                >
+                                <div class="progress-den"></div>
+                            </div>
+                            </div>
+                        </div>
+                        <p class="item_price amiko-font text-black">Цена: <span class="card-price"><?= $iteminfo['items_price'] ?></span> ₽</p>
+                        <div class="item_buttons d-flex  col-6">
+                            <button class="my-btn w-75 me-2">В корзину</button>
+                            <div class="favorite pointer rounded" style="border: 1px solid black; background-color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                                    <!-- <circle cx="17" cy="17" r="17" fill="white"/> -->
+                                        <path 
+                                        d="M25.1558 11.094C23.1222 9.4262 20.0979 9.72619 18.2313 11.5797L17.5003 12.3047L16.7692 11.5797C14.9064 9.72619 11.8783 9.4262 9.84476 11.094C7.51433 13.0083 7.39187 16.4439 9.47738 18.5189L16.6579 25.6545C17.1218 26.1152 17.8751 26.1152 18.3389 25.6545L25.5195 18.5189C27.6087 16.4439 27.4862 13.0083 25.1558 11.094Z" 
+                                        fill="black"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <h2 class="h2-title mb-4 nav-link-font">Описание</h2>
                     <div>
-                        <p class="amiko-font text-black" style="font-size: 18px">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута. Эта Эфиопия натуральной обработки — практически идеальный кофе для эспрессо. Он обладает яркими дескрипторами, характерными для Эфиопии, а также высокой сладостью и сбалансированной, не слишком высокой кислотностью. Этот кофе идеально сочетается с молоком, а в капучино даёт вкус ягодного йогурта с шоколадными нотами.</p>
+                        <p class="amiko-font text-black card-text" style="font-size: 18px"><?= $iteminfo['items_description'] ?></p>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -67,19 +130,19 @@
                         <tbody>
                             <tr class="rounded">
                                 <th scope="row">Регион</th>
-                                <td>Иргачефф</td>
+                                <td><?= $iteminfo['items_country'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Способ обработки</th>
-                                <td>Натуральный</td>
+                                <td><?= $iteminfo['items_method'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Степень обжарки</th>
-                                <td>Эспрессо</td>
+                                <td>Не указано</td>
                             </tr>
                             <tr>
                                 <th scope="row">Способы приготовления</th>
-                                <td>Для эспрессо</td>
+                                <td><?= $iteminfo['items_purpose'] ?></td>
                             </tr>
                         </tbody>
                         </table>
@@ -88,65 +151,26 @@
                 <div class="row mb-3">
                     <h2 class="h2-title mb-4 nav-link-font">Похожие товары</h2>
                     <div class="row">
-                    <div class="col-4 ps-0">
-                    <div class="card" style="width: 19rem;">
-                <div class="ps-4 pt-4 pe-4">
-                  <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-                    <img src="/assets/img/espresso-main.png" class="card-img-top" alt="...">
-                    <div class="favorite">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                          <circle cx="17" cy="17" r="17" fill="white"/>
-                          <path d="M25.1558 11.094C23.1222 9.4262 20.0979 9.72619 18.2313 11.5797L17.5003 12.3047L16.7692 11.5797C14.9064 9.72619 11.8783 9.4262 9.84476 11.094C7.51433 13.0083 7.39187 16.4439 9.47738 18.5189L16.6579 25.6545C17.1218 26.1152 17.8751 26.1152 18.3389 25.6545L25.5195 18.5189C27.6087 16.4439 27.4862 13.0083 25.1558 11.094Z" fill="black"/>
-                    </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-card">
-                  <div class="card-body">
-                      <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: 12311</h6>
-                      <h5 class="card-title">Эфиопия Иргачефф нат</h5>
-                      <p class="card-text">Сладкий кофе с нотами цветов, тёмных ягод, молочного шоколада и грейпфрута</p>
-                      <div class="card-ranges">
-                          <label for="toxic" class="form-label amiko-font card-subtitle" style="color: #070707;">Кислотность</label>
-                            <input type="range" class="form-range range-bg" id="toxic" value="80" disabled>
-                          <label for="disabledRange" class="form-label amiko-font card-subtitle" style="color: #070707;">Плотность</label>
-                            <input type="range" class="form-range" id="disabledRange" disabled>
-                      </div>
-                      <div class="d-flex flex-row align-items-center justify-content-between mt-3 pe-4">
-                        <a href="#" class="amiko-font" style="text-align: center; color: black; font-size: 14px; font-style: normal; font-weight: 400;line-height: normal;">в зернах 
-                          <svg class="ms-1 mb-1" xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
-                            <path d="M7.15474 9.65876L0.35261 3.07599C-0.117537 2.62101 -0.117537 1.88529 0.35261 1.43514L1.48296 0.341239C1.95311 -0.113746 2.71335 -0.113746 3.17849 0.341239L8 5.00726L12.8215 0.341239C13.2917 -0.113746 14.0519 -0.113746 14.517 0.341239L15.6474 1.43514C16.1175 1.89013 16.1175 2.62585 15.6474 3.07599L8.84526 9.65876C8.38512 10.1137 7.62488 10.1137 7.15474 9.65876Z" fill="black"/>
-                          </svg>
-                        </a>
-                          <div class="d-flex flex-row align-items-center justify-content-between">
-                            <svg class="minus-btn" xmlns="http://www.w3.org/2000/svg" width="11" height="5" viewBox="0 0 11 5" fill="none">
-                              <path d="M10.1029 0.475586H0.777143C0.348014 0.475586 0 1.01931 0 1.68976V2.90393C0 3.57438 0.348014 4.1181 0.777143 4.1181H10.1029C10.532 4.1181 10.88 3.57438 10.88 2.90393V1.68976C10.88 1.01931 10.532 0.475586 10.1029 0.475586Z" fill="black"/>
-                            </svg>
-                              <p class="amiko-font count-item ms-2 me-2">1</p>
-                              <svg class="plus-btn" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M10.9107 4.61694H7.13393V0.839444C7.13393 0.375913 6.75809 0 6.29464 0H5.45536C4.99191 0 4.61607 0.375913 4.61607 0.839444V4.61694H0.839286C0.375843 4.61694 0 4.99285 0 5.45638V6.29583C0 6.75936 0.375843 7.13527 0.839286 7.13527H4.61607V10.9128C4.61607 11.3763 4.99191 11.7522 5.45536 11.7522H6.29464C6.75809 11.7522 7.13393 11.3763 7.13393 10.9128V7.13527H10.9107C11.3742 7.13527 11.75 6.75936 11.75 6.29583V5.45638C11.75 4.99285 11.3742 4.61694 10.9107 4.61694Z" fill="black"/>
-                              </svg>
-                          </div>
-                        </div>
-                      <div class="d-flex flex-row justify-content-between align-items-center mt-3">
-                        <div class="d-flex flex-row justify-content-between">
-                          <div class="d-flex flex-column align-items-center me-3">
-                            <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px">250 г.</p>
-                            <div class="line"></div>
-                            <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px">599 ₽</p>
-                          </div>
-                          <div class="d-flex flex-column align-items-center">
-                            <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">1000 г.</p>
-                            <div class="line" style="background-color: rgba(0, 0, 0, 0.50)"></div>
-                            <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">2039 ₽</p>
-                          </div>
-                        </div>
-                        <a href="#" class="btn btn-primary my-btn d-flex align-items-center justify-content-center">Купить</a>
-                      </div>
-                  </div>
-                </div>
-                    </div>
-                    </div>
+                        <?php
+                            include('../modules/db.php');
+                            $id = $arrItems['items_article'];
+                            $sql = "SELECT * FROM items WHERE items_article <> '$id'";
+                            $result = $conn -> query($sql);
+                            $imgItem = $conn -> query("SELECT * FROM items_images");
+                            $allImg = array();
+                            while($row = $imgItem->fetch_assoc()) {
+                                $allImg[] = $row;
+                            }
+                            $conn -> close();
+                            while($arrItems = $result->fetch_assoc()):
+                              $arrItems['items_img'] = reset(
+                                array_filter($allImg, function($item) use ($arrItems) {
+                                  return $item['item_id'] == $arrItems['items_article'];
+                                })
+                              )['item_image'];    
+                              include ("../modules/card.php");
+                            endwhile;
+                        ?>
                     </div>
                 </div>
             </section>

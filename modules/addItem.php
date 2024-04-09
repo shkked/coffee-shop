@@ -4,8 +4,8 @@ include('db.php');
 
 $nameItem = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
 $articleItem = filter_var(trim($_POST['article']), FILTER_SANITIZE_STRING);
-$imgItem = filter_var(trim($_POST['img']), FILTER_SANITIZE_STRING);
 $purposeItem = filter_var(trim($_POST['purpose']), FILTER_SANITIZE_STRING);
+$imgItem = $_FILES['img']['name'];
 $descItem = filter_var(trim($_POST['desc']), FILTER_SANITIZE_STRING);
 $subdescItem = filter_var(trim($_POST['subdesc']), FILTER_SANITIZE_STRING);
 $countItem = filter_var(trim($_POST['count']), FILTER_SANITIZE_STRING);
@@ -20,10 +20,21 @@ $availableItem = filter_var(trim($_POST['available']), FILTER_SANITIZE_STRING);
 $categoryItem = filter_var(trim($_POST['cat']), FILTER_SANITIZE_STRING);
 $categoryItems = (int)$categoryItem;
 
+foreach ($imgItem as $key => $value) {
+// echo $value;
+$conn -> query("INSERT INTO `items_images` (
+    `item_id`,
+    `item_image`
+) VALUES (
+    '$articleItem',
+    '$value'
+)");
 
-echo $nameItem;
+};
+
+// echo $_FILES['images']['name'][0];
 echo "</br>";
-echo $imgItem;
+// print_r($imgItem);
 echo "</br>";
 echo $descItem;
 echo "</br>";
@@ -55,11 +66,9 @@ echo $articleItem;
 echo "</br>";
 
 
-
 $conn -> query("INSERT INTO `items` (
     `items_article`,
     `items_name`, 
-    `items_img`, 
     `items_description`, 
     `items_subdesc`,
     `items_category`, 
@@ -76,7 +85,6 @@ $conn -> query("INSERT INTO `items` (
 ) VALUES (
     '$articleItem',
     '$nameItem', 
-    '$imgItem', 
     '$descItem', 
     '$subdescItem',
     '$categoryItems', 

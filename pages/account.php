@@ -56,13 +56,22 @@
                     $conn -> close();
                     if($user):
                 ?>
-                <div class="row ms-0 d-flex flex-row align-center">
-                    <div class="col-4">
-                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 50%; width: 200px; height: 200px; background-color: black;">
-                            <img class="w-75 h-75" src="/assets/img/<?= $user['users_img'] ?>" alt="user-img">
+                <div class="row ms-0 d-flex flex-column flex-sm-row align-center">
+                    <div class="col-12 col-sm-4">
+                        <div class="d-flex align-items-center justify-content-center" 
+                        style="border-radius: 50%;
+                         width: 200px;
+                          height: 200px; 
+                          background-image: url(/assets/img/<?= $user['users_img'] ?>);
+                          background-repeat: no-repeat;/
+                            background-position: center center;
+                            background-color: black;
+                            background-size: cover;"
+                            >
+                            <!-- <img class="w-75 h-75" src="/assets/img/<?= $user['users_img'] ?>" alt="user-img"> -->
                         </div>
                     </div>
-                    <div class="col-6 ms-0 d-flex flex-column align-center acc-info">
+                    <div class="col-12 col-sm-6 px-0 mt-4 mt-sm-0 d-flex flex-column align-center acc-info">
                         <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши данные</strong></h2>
                         <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
                         <p class="px-0">Ваш номер телефона: <span><?php echo $user['users_tel'];?></span></p>
@@ -81,7 +90,7 @@
                 <?php
                 endif;
                 ?>
-                <div class="row ms-0 mt-4 d-flex flex-column align-center acc-info">
+                <div class="row px-0 mt-4 d-flex flex-column align-center acc-info">
                     <h2 class="nav-link-font px-0 text-black text-start"><strong>Ваши заказы</strong></h2>
                     <div class="col-12 d-flex flex-row justify-content-between acc-info px-0">
                     <?php

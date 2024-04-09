@@ -6,7 +6,6 @@
     <title>Корзина</title>
     <?php include("../modules/links.php") ?>
     <script defer src="../assets/script/cart_render.js"></script>
-    <script defer src="../assets/script/cart.js"></script>
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>

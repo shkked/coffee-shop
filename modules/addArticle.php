@@ -33,4 +33,4 @@ $conn -> query("INSERT INTO `articles` (
 );");
 $conn -> close();
 
-// header('Location: /pages/articles.php');
+header('Location: /pages/articles.php');
