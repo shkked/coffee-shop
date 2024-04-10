@@ -3,8 +3,8 @@
 include('db.php');
 
 
-$userEmail = filter_var(trim($_GET['email']), FILTER_SANITIZE_STRING);
-$password = filter_var(trim($_GET['pass']), FILTER_SANITIZE_STRING);
+$userEmail = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
+$password = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
 $password = md5($password . "ground-black");
 
 $mass = $conn -> query("SELECT * FROM `users` WHERE `users_email` = '$userEmail' AND `users_pass` = '$password'");

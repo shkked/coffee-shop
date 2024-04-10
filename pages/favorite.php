@@ -7,6 +7,8 @@
     <?php include("../modules/links.php") ?>
     <script defer src="../assets/script/favorite_render.js"></script>
     <script defer src="../assets/script/favorite_data.js"></script>
+    <script defer src="../assets/script/card-ranges.js"></script>
+    <script defer src="../assets/script/cart_data.js"></script
 </head>
 <body>
     <?php include ("../modules/header.php"); ?>

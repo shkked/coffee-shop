@@ -1,12 +1,17 @@
+const element = document.querySelector('#validationPhone');
+        const maskOptions = {
+          mask: '+{7}(000)000-00-00'
+        };
+        IMask(element, maskOptions);
 (() => {
     'use strict'
   
 
-    const form = document.querySelector('.needs-validation-reg')
+    const form = document.querySelector('.needs-validation')
     form.addEventListener('submit', event => {
         event.preventDefault();
         event.stopPropagation();
-        console.log(form);
+        // console.log(form);
         function validationInputs(){
           let name, phone, email, pass = false;
           if(form.validationName &&form.validationName.value.trim().length > 3){
@@ -57,6 +62,7 @@
             console.log('form submitted');
           }
         };
+
         form.submit();
         // validationInputs();
       form.classList.add('was-validated')

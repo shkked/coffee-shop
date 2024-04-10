@@ -45,7 +45,7 @@
     <div class="container-user">
       <div class="d-flex flex-wrap row align-items-center justify-content-between justify-content-sm-start">
         <a href="/" class="d-flex px-md-0 px-lg-2 col-5 col-md-2 align-items-center ms-lg-3 mb-2 mb-lg-0 me-md-2 me-lg-5 text-white text-decoration-none">
-          <img class="logo" src="/assets/img/logo.png" alt="logo-website">
+          <img class="logo" src="/assets/img/logo.webp" alt="logo-website">
         </a>
           <button 
             class="navbar-toggler d-sm-none bg-black rounded col-2 d-flex align-items-center justify-content-center"
@@ -122,15 +122,15 @@
   </header>
 
 
-  <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="regModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content contact-form">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Регистрация</h1>
+        <h1 class="modal-title fs-5" id="regModal">Регистрация</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation-reg">
+      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation">
         <div class="col-md-4">
           <label for="validationName" class="form-label">Имя</label>
           <input type="text" name="name" class="form-control" id="validationName"
@@ -166,7 +166,7 @@
         <div class="col-md-4">
           <label for="validationEmal" class="form-label">Почта</label>
           <input type="email" name="email" class="form-control" id="validationEmail"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+
           required>
           <div class="valid-feedback">
             Отлично!
@@ -201,34 +201,40 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/auth.php" method="GET" class="row g-3 needs-validation">
-  <div class="col-md-4">
-    <label for="email" class="form-label">Почта</label>
-    <input type="email" name="email" class="form-control" id="email" required>
-    <div class="valid-feedback">
-      Отлично!
-    </div>
-  </div>
-  <div class="col-md-4">
-    <label for="pass" class="form-label">Пароль</label>
-    <input type="password" name="pass" class="form-control" id="pass" required>
-    <div class="valid-feedback">
-      Отлично!
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Войти</button>
-  </div>
-</form>
+      <form action="/modules/auth.php" method="POST" class="row g-3 needs-validation">
+        <div class="col-md-4">
+          <label for="email" class="form-label">Почта</label>
+          <input type="email" name="email" class="form-control" id="email" required>
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+          <div class="invalid-feedback">
+            Введите корректную почту
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="pass" class="form-label">Пароль</label>
+          <input type="password" name="pass" class="form-control" id="pass" required>
+          <div class="valid-feedback">
+            Отлично!
+          </div>
+          <div class="invalid-feedback">
+            Введите корректный пароль
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Войти</button>
+        </div>
+      </form>
       </div>
     </div>
   </div>
     </div>
-    <div class="modal fade" id="contactus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="contactus" tabindex="-1" aria-labelledby="contactus" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="exampleModalLabel">Связь с нами</h1>
+        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="contactus">Связь с нами</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body px-4">
@@ -250,11 +256,11 @@
     </div>
   </div>
     </div>
-    <div class="modal fade" id="pickerCity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="pickerCity" tabindex="-1" aria-labelledby="pickerCity" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="exampleModalLabel">Выбор города</h1>
+        <h1 class="modal-title ps-2 fs-5 nav-link-font h2-title my-0" id="pickerCity">Выбор города</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body px-4">

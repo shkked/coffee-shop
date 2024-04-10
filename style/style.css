@@ -191,7 +191,6 @@ header .logo {
 
 .info-left, .info-right {
   min-height: 390px;
-  border-radius: 10px;
 }
 
 .info-right > div {
@@ -221,7 +220,7 @@ h1 {
 }
 
 .card {
-  height: 653px;
+  height: 670px;
   color: black;
 }
 .card .admin-delete {
@@ -248,6 +247,22 @@ h1 {
 .card .card-title {
   font-size: 16px;
   font-weight: 700;
+  height: 35px;
+  position: relative;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  overflow: hidden !important;
+}
+.card .card-title:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+  pointer-events: none;
 }
 .card .card-text {
   font-size: 13px;
@@ -447,7 +462,22 @@ h1 {
   color: white !important;
 }
 .catalog .active-category img {
-  fill: white !important;
+  filter: brightness(0) invert(1);
+}
+.catalog .why-we-div {
+  position: relative;
+}
+.catalog .why-we-div .admin-delete {
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .catalog .why-we-div:hover {
   cursor: pointer !important;
@@ -694,6 +724,10 @@ h1 {
 .account-header a:hover {
   text-decoration: underline !important;
   cursor: pointer !important;
+}
+
+.account-section .acc-img:hover {
+  cursor: pointer;
 }
 
 .acc-info h2 {

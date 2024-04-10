@@ -61,20 +61,20 @@
             </section>
             <section class="why-we" style="margin-bottom: 140px">
                <h2 class="text-start nav-link-font h2-title">Почему нас выбирают?</h2>
-               <div class="d-flex justify-content-between align-center">
-                <div class="why-we-div">
+               <div class="d-flex row justify-content-between align-center">
+                <div class="why-we-div col-6 col-sm-3">
                   <img src="../assets/icons/handshake-solid.svg" alt="">
                   <p>Надежность</p>
                 </div>
-                <div class="why-we-div">
+                <div class="why-we-div col-6 col-sm-3">
                   <img src="../node_modules/bootstrap-icons/icons/lightning-fill.svg" alt="">
                   <p>Скорость работы</p>
                 </div>
-                <div class="why-we-div">
+                <div class="why-we-div col-6 col-sm-3 mt-2">
                   <img src="../node_modules/bootstrap-icons/icons/patch-check-fill.svg" alt="">
                   <p>Высокий рейтинг</p>
                 </div>
-                <div class="why-we-div">
+                <div class="why-we-div col-3 mt-2">
                   <img src="../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
                   <p>Гибкость</p>
                 </div>

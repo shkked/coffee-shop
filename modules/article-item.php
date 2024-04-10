@@ -1,6 +1,6 @@
 <div 
                       onclick="toArticle('<?= $row['articles_id'] ?>')" 
-                      class="pointer d-flex flex-column article-card col-lg-4 col-12 col-md-5 mb-4"
+                      class="pointer d-flex flex-column article-card col-lg-4 col-12 col-md-5"
                       >
                         <div class="article-img">
                                         <!-- <a href="/pages/articles.php?id=<?= $row['articles_id'] ?>" style="text-decoration: none !important"> -->

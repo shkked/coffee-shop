@@ -10,9 +10,13 @@ if(params.get('id')){
 }
 whyWe.forEach((item, index) => item.addEventListener(
     'click', e => {
-        e.target.closest('.why-we-div').classList.toggle('active-category');
-        activeCat = index+=1;
-        getParam = activeCat;
-        window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam);
+        if(!e.target.classList.contains('admin-delete') && !e.target.closest('.why-we-div').classList.contains('active-category')){
+            e.target.closest('.why-we-div').classList.toggle('active-category');
+            activeCat = index+=1;
+            getParam = activeCat;
+            window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam);
+        } else {
+            window.location.href = 'catalog.php';
+        }
     }
 ));

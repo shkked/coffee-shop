@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Ground Black</title>
     <?php include("./modules/links.php") ?>
     <script defer src="./assets/script/favorite_data.js"></script>
@@ -10,30 +11,33 @@
 <body>
     <?php include ("./modules/header.php"); ?>
     <main>
-      <div class="container-user">
         <section class="d-flex flex-column flex-sm-row justify-content-between">
-        <div class="info-left mb-3 row d-flex flex-row align-items-center justify-content-start">
-          <div class="d-flex col-sm-6 col-12 flex-column align-items-start ps-8 p-5">
-            <p class="nav-link-font" style="font-size: 34px;">
-              Начни день с любимого 
-            <span style="font-style: italic">эспрессо</span>
-            </p>
-            <p class="amiko-font w-75" style="font-size: 13px">
-             Плотный кофе со вкусом жареных орехов, печенья и нуги
-            </p>
-            <a href="/pages/catalog.php" class="my-btn btn py-0 text-center sub-header-font d-flex align-items-center justify-content-center">Купить</a>
-          </div>
-          <div class="info-right col-sm-5 col-12 d-flex justify-content-center align-items-center">
-            <div class="rounded p-4">
-              <img class="p-2" src="/assets/img/espresso-main.png" alt="espresso">
+          <div class="info-left row col-12 mb-3 d-flex align-items-center justify-content-center">
+            <div class="container-user px-0 mx-0 row w-100 col-12 d-flex flex-row align-items-center justify-content-center">
+            <div class="d-flex order-sm-first pt-0 pt-sm-5 col-sm-6 col-12 flex-column align-items-start ps-8 p-5">
+                <p class="nav-link-font" style="font-size: 34px;">
+                  Начни день с любимого 
+                <span style="font-style: italic">эспрессо</span>
+                </p>
+                <p class="amiko-font w-75" style="font-size: 13px">
+                 Плотный кофе со вкусом жареных орехов, печенья и нуги
+                </p>
+                <a href="/pages/catalog.php" class="my-btn btn py-0 text-center sub-header-font d-flex align-items-center justify-content-center">Купить</a>
+              </div>
+              <div class="info-right order-first col-sm-5 col-12 d-flex justify-content-center align-items-center">
+                <div class="rounded p-4">
+                  <img class="p-2" src="/assets/img/espresso-main.webp" alt="espresso">
+                </div>
             </div>
-        </div>
-        </div>
+            </div>
+          </div>
         </section>
+        <div class="container-user">
         <section class="articles-section">
           <div class="d-flex flex-row justify-content-between align-items-center ">
-            <h2 class="h2-title nav-link-font">Последние статьи</h2>
-            <a href="/pages/articles.php" class="text-dark underlined sub-header-font">Посмотреть все</a>
+            <h2 class="d-none d-sm-block h2-title nav-link-font">Последние статьи</h2>
+            <a href="/pages/articles.php" class="d-sm-none h2-title nav-link-font">Последние статьи</a>
+            <a href="/pages/articles.php" class="d-none d-sm-block text-dark underlined sub-header-font">Посмотреть все</a>
           </div>
           <div class="d-flex flex-row row justify-content-between align-items-center">
           <?php 
@@ -49,8 +53,9 @@
         </section>
         <section style="margin-bottom: 140px">
           <div class="d-flex flex-row justify-content-between align-items-center">
-            <h2 class="h2-title nav-link-font">Часто покупают</h2>
-            <a href="/pages/catalog.php" class="text-dark underlined sub-header-font">Посмотреть все</a>
+            <h2 class="d-sm-block d-none h2-title nav-link-font">Часто покупают</h2>
+            <a href="/pages/catalog.php" class="d-sm-none h2-title nav-link-font">Часто покупают</a>
+            <a href="/pages/catalog.php" class="d-none d-sm-block text-dark underlined sub-header-font">Посмотреть все</a>
           </div>
           <div class="d-flex flex-row row justify-content-between align-items-center">
          <?php

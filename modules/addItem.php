@@ -20,50 +20,6 @@ $availableItem = filter_var(trim($_POST['available']), FILTER_SANITIZE_STRING);
 $categoryItem = filter_var(trim($_POST['cat']), FILTER_SANITIZE_STRING);
 $categoryItems = (int)$categoryItem;
 
-foreach ($imgItem as $key => $value) {
-// echo $value;
-$conn -> query("INSERT INTO `items_images` (
-    `item_id`,
-    `item_image`
-) VALUES (
-    '$articleItem',
-    '$value'
-)");
-
-};
-
-// echo $_FILES['images']['name'][0];
-echo "</br>";
-// print_r($imgItem);
-echo "</br>";
-echo $descItem;
-echo "</br>";
-echo $countItem;
-echo "</br>";
-echo $priceItem;
-echo "</br>";
-echo $categoryItem;
-echo "</br>";
-echo $ratingItem;
-echo "</br>";
-echo $countryItem;
-echo "</br>";
-echo $tasteItem;
-echo "</br>";
-echo $methodItem;
-echo "</br>";
-echo $availableItem;
-echo "</br>";
-echo $densityItem;
-echo "</br>";
-echo $acidityItem;
-echo "</br>";
-echo $purposeItem;
-echo "</br>";
-echo $subdescItem;
-echo "</br>";
-echo $articleItem;
-echo "</br>";
 
 
 $conn -> query("INSERT INTO `items` (
@@ -99,6 +55,18 @@ $conn -> query("INSERT INTO `items` (
     '$purposeItem',
     '$availableItem'
 );");
+
+foreach ($imgItem as $key => $value) {
+    // echo $value;
+    $conn -> query("INSERT INTO `items_images` (
+        `item_id`,
+        `item_image`
+    ) VALUES (
+        '$articleItem',
+        '$value'
+    )");
+    
+    };
 $conn -> close();
 
 header('Location: /pages/catalog.php');

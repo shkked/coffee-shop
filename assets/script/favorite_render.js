@@ -34,14 +34,7 @@ function renderarrFav({acidity, articleNumber, density, description, imgSrc, pri
   <div class="card">
     <div class="ps-4 pt-4 pe-4">
       <div class="d-flex justify-content-center align-items-center p-5" style="background-color: #BCB5A6; border-radius: 10px;">
-      <?php 
-      if(isset($_COOKIE['role'])):
-      ?>
-        <a href="../modules/delete.php?id=<?= $arrItems['items_id'] ?>" class="admin-delete pointer">
-            <img src="../node_modules/bootstrap-icons/icons/trash-fill.svg" alt="remove">
-        </a>
-    <?php endif; ?>
-    <a href="/pages/item_info.php?id=<?= $arrItems['items_id'] ?>" style="text-decoration: none !important; color: black;">
+    <a href="/pages/item_info.php?id=${articleNumber}" style="text-decoration: none !important; color: black;">
         <img src="${imgSrc}" class="card-img-top" alt="img-item">
     </a>
         <div class="favorite pointer">
@@ -56,9 +49,9 @@ function renderarrFav({acidity, articleNumber, density, description, imgSrc, pri
     </div>
     <div class="container-card">
     <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: <?= $arrItems['items_article'] ?></h6>
-        <h5 class="card-title"><?= $arrItems['items_name'] ?></h5>
-        <p class="card-text"><?= $arrItems['items_subdesc'] ?></p>
+        <h6 class="card-subtitle mb-2 text-body-secondary amiko-font">Артикул: ${articleNumber}</h6>
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">${description}</p>
         <div class="card-ranges">
             <label for="toxic" class="form-label amiko-font card-subtitle" style="color: #070707;">Кислотность</label>
             <div class="wrapper">
@@ -66,7 +59,7 @@ function renderarrFav({acidity, articleNumber, density, description, imgSrc, pri
                 type="range" 
                 class="form-range toxic-range" 
                 id="toxic" 
-                value="<?= $arrItems['items_acidity'] ?>" 
+                value="${acidity}" 
                 disabled
                 >
                 <div class="progress-tox"></div>
@@ -77,7 +70,7 @@ function renderarrFav({acidity, articleNumber, density, description, imgSrc, pri
                 type="range" 
                 class="form-range" 
                 id="density" 
-                value="<?= $arrItems['items_density'] ?>" 
+                value="${density}" 
                 disabled
                 >
                 <div class="progress-den"></div>
@@ -105,12 +98,12 @@ function renderarrFav({acidity, articleNumber, density, description, imgSrc, pri
             <div class="d-flex flex-column align-items-center me-3">
               <p class="amiko-font" style="color: black; margin-bottom: 0; font-size: 14px">250 г.</p>
               <div class="line"></div>
-              <p class="amiko-font card-price" style="color: black; margin-bottom: 0; font-size: 14px"><?= $arrItems['items_price'] ?> ₽</p>
+              <p class="amiko-font card-price" style="color: black; margin-bottom: 0; font-size: 14px">${price} ₽</p>
             </div>
             <div class="d-flex flex-column align-items-center">
               <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">1000 г.</p>
               <div class="line" style="background-color: rgba(0, 0, 0, 0.50)"></div>
-              <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px"><?php echo $arrItems['items_price']*4 ?> ₽</p>
+              <p class="amiko-font" style="color: rgba(0, 0, 0, 0.50); margin-bottom: 0; font-size: 14px">${price * 4} ₽</p>
             </div>
           </div>
           <p class="btn btn-primary my-btn mb-0 d-flex align-items-center justify-content-center">Купить</p>

@@ -45,7 +45,7 @@
   </div>
     </div>
 
-            <section>
+            <section class="account-section">
                 <h1 class="text-start h2-title nav-link-font mt-5">Личный кабинет</h1>
                 <?php
                     include("../modules/db.php");
@@ -58,15 +58,21 @@
                 ?>
                 <div class="row ms-0 d-flex flex-column flex-sm-row align-center">
                     <div class="col-12 col-sm-4">
-                        <div class="d-flex align-items-center justify-content-center" 
-                        style="border-radius: 50%;
-                         width: 200px;
-                          height: 200px; 
-                          background-image: url(/assets/img/<?= $user['users_img'] ?>);
-                          background-repeat: no-repeat;/
-                            background-position: center center;
-                            background-color: black;
-                            background-size: cover;"
+                        <div class="d-flex acc-img align-items-center justify-content-center" 
+                            style="border-radius: 50%;
+                            width: 200px;
+                            height: 200px; 
+                            background-image: url(/assets/img/<?php
+                            if($user['users_img']):
+                            echo $user['users_img'];
+                                else:
+                            echo 'no-img.png';
+                                endif;
+                            ?>);
+                            background-repeat: no-repeat;/
+                                background-position: center center;
+                                background-color: black;
+                                background-size: cover;"
                             >
                             <!-- <img class="w-75 h-75" src="/assets/img/<?= $user['users_img'] ?>" alt="user-img"> -->
                         </div>
@@ -76,6 +82,11 @@
                         <p class="px-0">Ваше имя: <span><?php echo $user['users_name'];?></span></p>
                         <p class="px-0">Ваш номер телефона: <span><?php echo $user['users_tel'];?></span></p>
                         <p class="px-0">Ваш email: <span><?php echo $user['users_email'];?></span></p>
+                        <div class="col-4 px-0 mb-2">
+                            <a href="../modules/remove-acc.php?id=<?= $user['users_id'] ?>" class="text-center w-100">
+                                <button class="my-btn text-center w-100 ">Удалить аккаунт</button>
+                            </a>
+                        </div>
                         <div class="col-4 px-0">
                             <button data-bs-toggle="modal" data-bs-target="#changePass" class="my-btn text-center w-100 ">Изменить пароль</button>
                         </div>

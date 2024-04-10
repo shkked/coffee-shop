@@ -237,6 +237,13 @@
                   while($arr = $mass -> fetch_assoc()):
                   ?>
                 <div class="why-we-div col-3 me-2 me-sm-4 mt-2 mt-sm-0">
+                  <?php 
+                  if(isset($_COOKIE['role'])):
+                  ?>
+                  <a href="../modules/delete-cat.php?id=<?= $arr['cat_id'] ?>" class="admin-delete pointer">
+                      <img src="../node_modules/bootstrap-icons/icons/trash-fill.svg" alt="remove">
+                  </a>
+                  <?php endif; ?>
                   <img src="../assets/icons/<?= $arr['cat_img']; ?>" alt="">
                   <p><?= $arr['cat_name']; ?></p>
                 </div>

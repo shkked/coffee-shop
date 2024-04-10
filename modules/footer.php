@@ -21,7 +21,7 @@
                             <li><a target="blank" href="#">Партнерская программа</a></li>
                         </ul>
                     </div>
-                    <div class="nav-link-font col-6 mt-4 col-sm-2">
+                    <div class="nav-link-font col-6 mt-4 mt-sm-0 col-sm-2">
                         <h4>Каталог</h4>
                         <ul>
                             <li><a target="blank" href="/pages/catalog.php">Кофе</a></li>
