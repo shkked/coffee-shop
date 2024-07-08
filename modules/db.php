@@ -3,6 +3,6 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$database = "ground-black";
+$database = "v91670iu_groundb";
 
 $conn = new mysqli($servername, $username, $password, $database);

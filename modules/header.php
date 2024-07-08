@@ -58,7 +58,7 @@
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Меню</h5>
+              <h5 id="h5" class="offcanvas-title h2-title my-0 text-white nav-link-font" id="offcanvasDarkNavbarLabel">Меню</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body row">
@@ -77,19 +77,19 @@
                 </svg>
               </a>
             </div>
-                <ul class="nav order-first col-md-8 col-4 d-flex flex-column align-items-start col-lg-auto me-lg-auto mb-2 justify-content-lg-center mb-md-0">
+                <ul class="nav order-first col-md-8 col-4 d-flex flex-column align-items-start col-lg-auto mx-lg-auto mb-2 justify-content-lg-center mb-md-0">
                   <li><a href="/" class="pointer nav-link px-2 text-white nav-link-font">Главная</a></li>
                   <li><a href="/pages/catalog.php" class="pointer nav-link px-2 text-white nav-link-font">Каталог</a></li>
-                  <li><a href="#" class="pointer nav-link px-2 text-white nav-link-font">Магазины</a></li>
+                  <li><a href="/pages/articles.php" class="pointer nav-link px-2 text-white nav-link-font">Статьи</a></li>
                   <li><a href="/pages/aboutme.php" class="pointer nav-link px-2 text-white nav-link-font">О нас</a></li>
                   <li><a href="/pages/contactus.php" class="pointer nav-link px-2 text-white nav-link-font">Контакты</a></li>
                 </ul>
             </div>
           </div>
-        <ul class="nav col-md-8 col-lg-auto me-lg-auto d-none d-sm-flex mb-2 justify-content-lg-center mb-md-0">
+        <ul class="nav col-md-8 col-lg-auto mx-lg-auto d-none d-sm-flex mb-2 justify-content-lg-center mb-md-0">
           <li><a href="/" class="pointer nav-link px-2 text-black nav-link-font">Главная</a></li>
           <li><a href="/pages/catalog.php" class="pointer nav-link px-2 text-black nav-link-font">Каталог</a></li>
-          <li><a href="#" class="pointer nav-link px-2 text-black nav-link-font">Магазины</a></li>
+          <li><a href="/pages/articles.php" class="pointer nav-link px-2 text-black nav-link-font">Статьи</a></li>
           <li><a href="/pages/aboutme.php" class="pointer nav-link px-2 text-black nav-link-font">О нас</a></li>
           <li><a href="/pages/contactus.php" class="pointer nav-link px-2 text-black nav-link-font">Контакты</a></li>
         </ul>
@@ -130,17 +130,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation">
+      <form action="/modules/reg.php" method="POST" class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
           <label for="validationName" class="form-label">Имя</label>
-          <input type="text" name="name" class="form-control" id="validationName"
-          pattern="[А-Яа-я]+"
+          <input 
+          type="text" 
+          name="name" 
+          class="form-control" 
+          id="validationName"
+          pattern="[a-zA-Zа-яА-Я]+ [a-zA-Zа-яА-Я]+ [a-zA-Zа-яА-Я]+"
           required>
           <div class="valid-feedback">
             Отлично!
           </div>
           <div class="invalid-feedback">
-            Введите правильное имя
+            Имя должно содержать только символы и пробелы
           </div>
         </div>
         <div class="col-md-4">
@@ -154,20 +158,25 @@
           <label for="validationPhone" class="form-label">Номер телефона</label>
           <input type="text" name="tel" class="form-control" id="validationPhone" 
           required
-          placeholder="+7 (999) 999-99-99"
+          pattern="\+7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+          placeholder="+7(999)999-99-99"
           title="Номер телефона">
           <div class="valid-feedback">
             Отлично!
           </div>
           <div class="invalid-feedback">
-            Введите правильный номер телефона
+            Номер телефона должен быть в формате +7 (999) 999-99-99
           </div>
         </div>
         <div class="col-md-4">
           <label for="validationEmal" class="form-label">Почта</label>
-          <input type="email" name="email" class="form-control" id="validationEmail"
-
-          required>
+          <input 
+          type="text" 
+          name="email" 
+          class="form-control" 
+          id="validationEmail"
+          required 
+          pattern="[a-zA-Z]+@[a-zA-Z]+">
           <div class="valid-feedback">
             Отлично!
           </div>
@@ -177,18 +186,21 @@
         </div>
         <div class="col-md-4">
           <label for="validationPass" class="form-label">Пароль</label>
-          <input type="password" name="pass" class="form-control" id="validationPass" required>
+          <input type="password" pattern="[A-Za-z0-9]{4,}" name="pass" class="form-control" id="validationPass" required>
           <div class="valid-feedback">
             Отлично!
           </div>
+          <div class="invalid-feedback">
+            Пароль должен быть минимум 4 символа
+          </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">Регистрация</button>
+          <button class="btn btn-primary col-12 col-sm-6" type="submit">Регистрация</button>
         </div>
         <div>
           <p class="amiko-font text-black">Зарегистрированы? <a style="text-decoration: underline; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#authModal">Войдите</a></p>
         </div>
-</form>
+      </form>
       </div>
     </div>
   </div>
@@ -201,31 +213,34 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/modules/auth.php" method="POST" class="row g-3 needs-validation">
-        <div class="col-md-4">
-          <label for="email" class="form-label">Почта</label>
-          <input type="email" name="email" class="form-control" id="email" required>
-          <div class="valid-feedback">
-            Отлично!
-          </div>
-          <div class="invalid-feedback">
-            Введите корректную почту
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="pass" class="form-label">Пароль</label>
-          <input type="password" name="pass" class="form-control" id="pass" required>
-          <div class="valid-feedback">
-            Отлично!
-          </div>
-          <div class="invalid-feedback">
-            Введите корректный пароль
-          </div>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Войти</button>
-        </div>
-      </form>
+          <form action="/modules/auth.php" method="POST" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+              <label for="email" class="form-label">Почта</label>
+              <input type="email" name="email" class="form-control" id="email" required>
+              <div class="valid-feedback">
+                Отлично!
+              </div>
+              <div class="invalid-feedback">
+                Почта должна быть в формате
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="pass" class="form-label">Пароль</label>
+              <input type="password" name="pass" class="form-control" id="pass" required>
+              <div class="valid-feedback">
+                Отлично!
+              </div>
+              <div class="invalid-feedback">
+                Введите корректный пароль
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary col-12 col-sm-6" type="submit">Войти</button>
+            </div>
+            <div>
+              <p class="amiko-font text-black">Нет аккаунта? <a style="text-decoration: underline; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#regModal">Зарегистрируйтесь</a></p>
+            </div>
+          </form>
       </div>
     </div>
   </div>
@@ -243,12 +258,12 @@
                 <div class="contact-form">
                     <form id="contactUs" name="contactForm" class="d-flex flex-column justify-center align-center" action="/modules/contactForm.php" method="POST">
                         <div>
-                            <input type="text" name="name" placeholder="Как вас зовут?" required>
-                            <input type="email" name="email" placeholder="Введите почту" required>
-                            <input type="text" name="question" placeholder="Какой вопрос вас интересует?" required>
+                            <input class="form-control" type="text" name="name" placeholder="Как вас зовут?" required>
+                            <input class="form-control" type="email" name="email" placeholder="Введите почту" required>
+                            <input class="form-control" type="text" name="question" placeholder="Какой вопрос вас интересует?" required>
                         </div>
-                        <textarea name="message" cols="30" rows="10" placeholder="Ваше сообщение" required></textarea>
-                        <button class="mt-3 mx-auto" type="submit">Отправить заявку</button>
+                        <textarea class="form-control" name="message" cols="30" rows="10" placeholder="Ваше сообщение" required></textarea>
+                        <button class="mt-3 col-12 col-sm-6" type="submit">Отправить заявку</button>
                     </form>
                 </div>
             </section>
@@ -274,3 +289,76 @@
     </div>
   </div>
     </div>
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 nav-link-font h2-title my-0" id="alertModal">Уведомление от сайта</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+if(isset($_SESSION['alertreg'])) {
+  $alertmessage = $_SESSION['alertreg'];
+  // unset($_SESSION['alertreg']);
+}
+if(isset($_SESSION['alertauth'])) {
+  $alertmessage = $_SESSION['alertauth'];
+  // unset($_SESSION['alertauth']);
+}
+if(isset($_SESSION['alertpromo'])) {
+  $alertmessage = $_SESSION['alertpromo'];
+  // unset($_SESSION['alertauth']);
+}
+if(isset($_SESSION['alertOrder'])) {
+  $alertmessage = $_SESSION['alertOrder'];
+  // unset($_SESSION['alertauth']);
+}
+        echo $alertmessage;
+        ?>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<?php 
+session_start();
+// var_dump($_SESSION['alertauth']);
+if(isset($_SESSION['alertreg'])) {
+  // $alertmessage = $_SESSION['alertreg'];
+  echo "<script>
+  let alert = new bootstrap.Modal(document.getElementById('alertModal'));
+  alert.show();
+        </script>";
+  unset($_SESSION['alertreg']);
+}
+if(isset($_SESSION['alertauth'])) {
+  // $alertmessage = $_SESSION['alertauth'];
+  echo "<script>
+  let alert = new bootstrap.Modal(document.getElementById('alertModal'));
+  alert.show();
+        </script>";
+  unset($_SESSION['alertauth']);
+}
+if(isset($_SESSION['alertpromo'])) {
+  // $alertmessage = $_SESSION['alertauth'];
+  echo "<script>
+  let alert = new bootstrap.Modal(document.getElementById('alertModal'));
+  alert.show();
+        </script>";
+  unset($_SESSION['alertpromo']);
+}
+if(isset($_SESSION['alertOrder'])) {
+  // $alertmessage = $_SESSION['alertauth'];
+  echo "<script>
+  let alert = new bootstrap.Modal(document.getElementById('alertModal'));
+  alert.show();
+        </script>";
+  unset($_SESSION['alertOrder']);
+}
+?>

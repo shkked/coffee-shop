@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 1,
         autoplay: true,
         pauseOnHover: true,
-        height: '400px',
-        width: '400px',
+        height: '500px',
+        width: '500px',
         // настройки карусели
         breakpoints: {
             768 : { width: "350px", height: "350px"},

@@ -1,12 +1,13 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Ground Black</title>
+    <title>Интернет-магазин кофе Ground black</title>
     <?php include("./modules/links.php") ?>
-    <script defer src="./assets/script/favorite_data.js"></script>
 </head>
 <body>
     <?php include ("./modules/header.php"); ?>
@@ -14,7 +15,7 @@
         <section class="d-flex flex-column flex-sm-row justify-content-between">
           <div class="info-left row col-12 mb-3 d-flex align-items-center justify-content-center">
             <div class="container-user px-0 mx-0 row w-100 col-12 d-flex flex-row align-items-center justify-content-center">
-            <div class="d-flex order-sm-first pt-0 pt-sm-5 col-sm-6 col-12 flex-column align-items-start ps-8 p-5">
+            <div class="d-flex order-sm-first pt-0 pt-sm-5 col-sm-6 col-12 flex-column align-items-start ps-5 p-5">
                 <p class="nav-link-font" style="font-size: 34px;">
                   Начни день с любимого 
                 <span style="font-style: italic">эспрессо</span>
@@ -42,7 +43,7 @@
           <div class="d-flex flex-row row justify-content-between align-items-center">
           <?php 
                     include('./modules/db.php');
-                    $sql = "SELECT articles.*, users.* FROM articles JOIN users ON articles.articles_author = users.users_id LIMIT 3";
+                    $sql = "SELECT articles.*, users.* FROM articles JOIN users ON articles.articles_author = users.users_id LIMIT 4";
                     $result = $conn -> query($sql);
                     $conn -> close();
                     while($row = $result->fetch_assoc()):
@@ -60,7 +61,7 @@
           <div class="d-flex flex-row row justify-content-between align-items-center">
          <?php
               include('./modules/db.php');
-              $massItem = $conn -> query("SELECT * FROM `items` LIMIT 3");
+              $massItem = $conn -> query("SELECT * FROM `items` LIMIT 4");
               $imgItem = $conn -> query("SELECT * FROM `items_images`");
               $allImg = array();
               while($row = $imgItem->fetch_assoc()) {
@@ -71,8 +72,7 @@
                 $arrItems['items_img'] = reset(
                   array_filter($allImg, function($item) use ($arrItems) {
                     return $item['item_id'] == $arrItems['items_article'];
-                  })
-                )['item_image'];            
+                  }))['item_image'];            
                 include('./modules/card.php');
               endwhile;
               ?>
@@ -83,7 +83,6 @@
     </main>
     <?php include ("./modules/footer.php"); ?>
     <script>
-
 function toArticle(id) {
   window.location.href = "/pages/articles.php?id=" + id;
 }

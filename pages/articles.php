@@ -21,37 +21,37 @@
       </div>
       <div class="modal-body">
       <form id="addArticle" action="../modules/addArticle.php" method="POST" class="row g-3 needs-validation" novalidate>
-      <div class="col-md-4">
-          <label for="name" class="form-label">Название</label>
-          <input type="text" name="name" class="form-control" id="name" required>
-          <div class="valid-feedback">
-            Looks good!
+        <div class="col-md-12">
+            <label for="name" class="form-label">Название</label>
+            <input type="text" name="name" class="form-control" id="name" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
-        </div>
-      <div class="col-md-4">
-          <label for="text" class="form-label">Текст</label>
-          <textarea placeholder="Ваша статья" name="text" class="form-control" id="text" required></textarea>
-          <div class="valid-feedback">
-            Looks good!
+        <div class="col-md-12">
+            <label for="text" class="form-label">Текст</label>
+            <textarea placeholder="Ваша статья" name="text" class="form-control" id="text" required></textarea>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <label for="img" class="form-label">Изображение</label>
-          <input type="file" name="img" class="form-control" id="img" required>
-          <div class="valid-feedback">
-            Looks good!
+          <div class="col-md-6">
+            <label for="img" class="form-label">Изображение</label>
+            <input type="file" name="img" class="form-control" id="img" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <label for="img" class="form-label">Автор</label>
-          <input type="text" name="author" class="form-control" id="img" disabled value="Вы – <?= $_COOKIE['userName'] ?>">
-          <div class="valid-feedback">
-            Looks good!
+          <div class="col-md-6">
+            <label for="img" class="form-label">Автор</label>
+            <input type="text" name="author" class="form-control" id="img" disabled value="Вы – <?= $_COOKIE['userName'] ?>">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
-        </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Добавить</button>
-  </div>
+          <div class="col-12">
+            <button class="btn btn-primary col-12 col-sm-6 " type="submit">Добавить</button>
+          </div>
 </form>
       </div>
     </div>
@@ -72,31 +72,40 @@
                     endif;
                 ?>
         <h1 class="modal-title fs-5" id="viewArticle"><?= $activeArticle['articles_name'] ?></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="d-flex align-items-start h-100">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-4">
         <img class="w-100" src="../assets/img/<?= $activeArticle['articles_img'] ?>" alt="">
         <p class="amiko-font text-black mb-0 mt-4" style="word-break: break-word; font-size: 18px;"><?= $activeArticle['articles_text'] ?></p>
-        <p class="amiko-font text-black mb-0 mt-4">Автор: <?= $activeArticle['users_name'] ?></p>
+        <div class="d-flex justify-content-between mt-4">
+          <p class="amiko-font text-black mb-0">Автор: <?= $activeArticle['users_name'] ?></p>
+          <p class="amiko-font text-black mb-0">Дата: <?= $activeArticle['articles_date'] ?></p>
+        </div>
       </div>
     </div>
   </div>
     </div>
             <section>
+                <?php
+                $pagetitle = ["Статьи"];
+                $pageurl = ["/pages/articles.php"];
+                include('../modules/breadcrumbs.php');
+                ?>
                 <?php 
                 if(isset($_COOKIE['role'])):
                 ?>
             <div class="admin-btn row d-flex justify-content-center">
-                <div class="col-5 col-sm-3">
+                <div class="col-6 col-sm-4">
                   <button type="button" class="w-100 btn my-btn btn-primary" data-bs-toggle="modal" data-bs-target="#addArticle">
                   Написать статью
                 </button>
                 </div>
             </div>
                 <?php 
-                endif;
-                ?>
-                <h1 class="text-start mt-5 h2-title nav-link-font">Статьи</h1>
+                endif;?>
+                <h1 class="text-start mt-0 mt-lg-5 h2-title nav-link-font">Статьи</h1>
                 <div class="d-flex row flex-row justify-content-between">
                     <?php 
                     include('../modules/db.php');

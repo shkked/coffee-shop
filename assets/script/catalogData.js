@@ -8,15 +8,35 @@ const params = new URLSearchParams(window.location.search);
 if(params.get('id')){
     whyWe[params.get('id')-1].closest('.why-we-div').classList.add('active-category');
 }
+if(params.get('sort')){
+    document.querySelector('#sort').value = params.get('sort');
+}
 whyWe.forEach((item, index) => item.addEventListener(
     'click', e => {
         if(!e.target.classList.contains('admin-delete') && !e.target.closest('.why-we-div').classList.contains('active-category')){
             e.target.closest('.why-we-div').classList.toggle('active-category');
             activeCat = index+=1;
             getParam = activeCat;
-            window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam);
+            if(params.get('sort')){
+             window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam) + '&sort=' + encodeURIComponent(params.get('sort'));   
+            } else {
+                window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam);
+            }
         } else {
-            window.location.href = 'catalog.php';
+            if(params.get('sort')){
+                window.location.href = 'catalog.php?sort=' + encodeURIComponent(params.get('sort'));
+            } else {
+                window.location.href = 'catalog.php';
+            }
         }
     }
 ));
+if(document.querySelector("#sort")){
+    document.querySelector("#sort").addEventListener('change', (e) => {
+        if(params.get('id')){
+            window.location.href = 'catalog.php?id=' + encodeURIComponent(getParam) + '&sort=' + encodeURIComponent(e.target.value);
+    } else {
+        window.location.href = 'catalog.php?sort=' + encodeURIComponent(e.target.value);
+    }
+    })   
+}

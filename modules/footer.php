@@ -6,11 +6,11 @@
                     <div class="nav-link-font col-6 col-sm-3">
                         <h4>Помощь</h4>
                         <ul>
-                            <li><a target="blank" href="/pages/articles.php">Сообщество</a></li>
+                            <li><a target="blank" href="/pages/articles.php">Статьи</a></li>
                             <li><a target="blank" href="#">Правила сообщества</a></li>
                             <li><a target="blank" href="#">Вопрос-ответ</a></li>
                             <li><a target="blank" href="/pages/howtopick.php">Как выбрать кофе?</a></li>
-                            <li><a target="blank" href="/pages/contactsus.php">Контакты</a></li>
+                            <li><a target="blank" href="/pages/contactus.php">Контакты</a></li>
                         </ul>
                     </div>
                     <div class="nav-link-font col-6 col-sm-3">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="d-flex col-12 col-sm-3 flex-column align-items-center justify-content-end nav-link-font">
-                    <a href="tel:88003334980" class="text-decoration-none text-white mb-3" style="font-size: 23px; font-weight: 700">8 (800) 333-49-80</a>
+                    <a href="tel:88003334980" class="text-decoration-none text-white mb-3" style="font-size: 23px; font-weight: 700">8 (999) 222-11-44</a>
                     <span style="font-size: 15px; font-weight: 400">Бесплатный звонок по России</span>
                 </div>
             </section>

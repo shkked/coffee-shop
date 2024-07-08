@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 include('db.php');
 
@@ -7,7 +9,15 @@ $img = filter_var(trim($_POST['img']), FILTER_SANITIZE_STRING);
 $telName = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
 $userEmail = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
-$password = md5($password . "ground-black");
+$password = md5($password . "v91670iu_groundb");
+
+$checkemail = $conn -> query("SELECT * FROM `users` WHERE `users_email` = '$userEmail'");
+$checkemail = $checkemail -> fetch_assoc();
+if($checkemail):
+    $_SESSION['alertreg'] = "Такой email уже существует";
+    header("Location: ".$_SERVER['HTTP_REFERER']);
+    die;
+endif;
 
 $conn -> query("INSERT INTO `users` (
     `users_img`,
@@ -34,4 +44,4 @@ if($arr):
 endif;
 $conn -> close();
 
-header('Location: /');
+header("Location: ".$_SERVER['HTTP_REFERER']);

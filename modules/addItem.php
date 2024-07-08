@@ -69,4 +69,4 @@ foreach ($imgItem as $key => $value) {
     };
 $conn -> close();
 
-header('Location: /pages/catalog.php');
+header('Location: /pages/account.php');

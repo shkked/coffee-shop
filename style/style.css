@@ -11,6 +11,9 @@
     width: 150px !important;
     height: 150px !important;
   }
+  .why-we .why-we-div p {
+    font-size: 13px !important;
+  }
   .container-user {
     max-width: 740px !important;
   }
@@ -18,10 +21,10 @@
     width: 100px;
     height: auto;
   }
-  .nav-link-font, .contact-form h1, .why-we .why-we-div p {
+  header .nav-link-font, header .contact-form h1, .contact-form header h1, header .why-we .why-we-div p, .why-we .why-we-div header p {
     font-size: 13px !important;
   }
-  .sub-header-font, .account-header p, .account-header a, .how_make .make_txt li, .catalog .catalog-categories > div, .catalog .catalog-filters .form-select, .catalog .catalog-filters .form-control, .clear-btn, .contact-form button:not(.btn-close), .contact-form label, .fav-btn, .my-btn {
+  header .sub-header-font, header .account-header p, .account-header header p, header .account-header a, .account-header header a, header .how_make .make_txt li, .how_make .make_txt header li, header .catalog .catalog-categories > div, .catalog header .catalog-categories > div, header .catalog .catalog-filters .form-select, .catalog .catalog-filters header .form-select, header .catalog .catalog-filters .form-control, .catalog .catalog-filters header .form-control, header .clear-btn, header .contact-form button:not(.btn-close), .contact-form header button:not(.btn-close), header .contact-form label, .contact-form header label, header .fav-btn, header .add-btn, header .my-btn {
     font-size: 12px !important;
   }
   .info-left .nav-link-font, .info-left .contact-form h1, .contact-form .info-left h1, .info-left .why-we .why-we-div p, .why-we .why-we-div .info-left p {
@@ -31,6 +34,23 @@
     width: 30px;
     height: 30px;
     padding: 6px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .cart-item {
+    height: auto !important;
+  }
+  .clear-btn {
+    display: none !important;
+  }
+  .contact-info p {
+    font-size: 14px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .cart-img-top {
+    width: 150px;
+    height: 150px;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -43,12 +63,13 @@
   margin: 0;
   text-decoration: none;
 }
+
 main {
   min-height: calc(100vh - 356px) !important;
 }
 
 .container-user {
-  max-width: 1000px;
+  max-width: 1200px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -63,6 +84,10 @@ main {
 
 .rounded {
   border-radius: 10px !important;
+}
+
+.ps-8 {
+  padding-left: 120px !important;
 }
 
 @font-face {
@@ -102,6 +127,25 @@ main {
   color: black;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-btn {
+  border-radius: 10px;
+  background: white;
+  color: black;
+  border: 1px solid black !important;
+  width: 110px;
+  height: 38px;
+}
+.add-btn:hover {
+  background: black;
+  color: white;
+}
+
 .fav-btn {
   border-radius: 10px;
   background: white;
@@ -111,7 +155,7 @@ main {
   height: 39px;
 }
 
-.amiko-font, .item_info .table_property th, .item_info .table_property td, .how_make .make_txt p, .cart-buttons .promo, .cart-section .cart-item .quantity #value, .contact-form textarea, .contact-form select, .contact-form input, .card {
+.amiko-font, .account-section button, .account-section .button-delete, .account-section p, .account-section span, .account-section a, .account-section th, .account-section td, .account-section input, .account-section select, .account-section option, .item_info .table_property th, .item_info .table_property td, .how_make .make_txt p, .cart-buttons .promo, .cart-section .cart-item .quantity #value, .contact-form textarea, .contact-form select, .contact-form input, .card {
   font-family: "Amiko", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -134,7 +178,7 @@ main {
   font-size: 15px;
 }
 
-.sub-header-font, .account-header p, .account-header a, .how_make .make_txt li, .catalog .catalog-categories > div, .catalog .catalog-filters .form-select, .catalog .catalog-filters .form-control, .clear-btn, .contact-form button:not(.btn-close), .contact-form label, .my-btn, .fav-btn {
+.sub-header-font, .account-header p, .account-header a, .how_make .make_txt li, .catalog .catalog-categories > div, .catalog .catalog-filters .form-select, .catalog .catalog-filters .form-control, .clear-btn, .contact-form button:not(.btn-close), .contact-form label, .my-btn, .add-btn, .fav-btn {
   font-family: "Charter";
   font-weight: normal;
   line-height: normal;
@@ -163,7 +207,7 @@ body {
 .top-header p, .top-header span, .top-header a {
   color: black !important;
 }
-.top-header .sub-header-font:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .account-header p:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .account-header .top-header p:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .account-header a:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .account-header .top-header a:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .how_make .make_txt li:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .how_make .make_txt .top-header li:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-categories > div:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .catalog .top-header .catalog-categories > div:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-filters .form-select:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .catalog .catalog-filters .top-header .form-select:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-filters .form-control:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .catalog .catalog-filters .top-header .form-control:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .clear-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .contact-form button:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover:not(.btn-close), .contact-form .top-header button:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover:not(.btn-close), .top-header .contact-form label:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .contact-form .top-header label:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .my-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover, .top-header .fav-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .fav-btn):hover {
+.top-header .sub-header-font:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .account-header p:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .account-header .top-header p:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .account-header a:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .account-header .top-header a:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .how_make .make_txt li:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .how_make .make_txt .top-header li:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-categories > div:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .catalog .top-header .catalog-categories > div:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-filters .form-select:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .catalog .catalog-filters .top-header .form-select:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .catalog .catalog-filters .form-control:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .catalog .catalog-filters .top-header .form-control:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .clear-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .contact-form button:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover:not(.btn-close), .contact-form .top-header button:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover:not(.btn-close), .top-header .contact-form label:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .contact-form .top-header label:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .my-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .add-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover, .top-header .fav-btn:not(.account-header > .sub-header-font):not(.account-header > p):not(.account-header > a):not(.how_make .make_txt .account-header > li):not(.catalog .catalog-categories.account-header > div):not(.catalog .catalog-filters .account-header > .form-select):not(.catalog .catalog-filters .account-header > .form-control):not(.account-header > .clear-btn):not(.contact-form .account-header > button:not(.btn-close)):not(.contact-form .account-header > label):not(.account-header > .my-btn):not(.account-header > .add-btn):not(.account-header > .fav-btn):hover {
   text-decoration: underline !important;
 }
 
@@ -187,6 +231,9 @@ body {
 header .logo {
   width: 176px;
   height: 88px;
+}
+header #h5 {
+  font-size: 32px !important;
 }
 
 .info-left, .info-right {
@@ -220,7 +267,7 @@ h1 {
 }
 
 .card {
-  height: 670px;
+  height: 690px;
   color: black;
 }
 .card .admin-delete {
@@ -411,7 +458,6 @@ h1 {
 }
 .contact-form button:not(.btn-close) {
   padding: 10px 15px;
-  width: 200px;
   background-color: black;
   color: white;
   border-radius: 10px;
@@ -452,7 +498,7 @@ h1 {
   font-size: 24px;
   text-align: left;
   margin-bottom: 48px;
-  margin-top: 48px;
+  margin-top: 0;
 }
 .catalog .active-category {
   background-color: black;
@@ -618,17 +664,13 @@ h1 {
   cursor: pointer;
   position: absolute;
   width: auto;
+  right: 0;
+  top: 10px;
 }
 .cart-section .cart-item .delete img {
-  position: relative;
-  top: -80px;
-  left: 915px;
+  right: 0;
   width: 18px;
   height: 18px;
-}
-.cart-section .cart-item .cart-img-top {
-  width: 150px;
-  height: 150px;
 }
 .cart-section .cart-item .article {
   font-size: 11px;
@@ -687,7 +729,7 @@ h1 {
   top: 28%;
   z-index: 1;
 }
-.item_info .item_text .amiko-font, .item_info .item_text .table_property th, .item_info .table_property .item_text th, .item_info .item_text .table_property td, .item_info .table_property .item_text td, .item_info .item_text .card, .item_info .item_text .contact-form input, .contact-form .item_info .item_text input, .item_info .item_text .contact-form select, .contact-form .item_info .item_text select, .item_info .item_text .contact-form textarea, .contact-form .item_info .item_text textarea, .item_info .item_text .cart-section .cart-item .quantity #value, .cart-section .cart-item .quantity .item_info .item_text #value, .item_info .item_text .cart-buttons .promo, .cart-buttons .item_info .item_text .promo, .item_info .item_text .how_make .make_txt p, .how_make .make_txt .item_info .item_text p {
+.item_info .item_text .amiko-font, .item_info .item_text .account-section button, .account-section .item_info .item_text button, .item_info .item_text .account-section .button-delete, .account-section .item_info .item_text .button-delete, .item_info .item_text .account-section p, .account-section .item_info .item_text p, .item_info .item_text .account-section span, .account-section .item_info .item_text span, .item_info .item_text .account-section a, .account-section .item_info .item_text a, .item_info .item_text .account-section th, .account-section .item_info .item_text th, .item_info .item_text .account-section td, .account-section .item_info .item_text td, .item_info .item_text .account-section input, .account-section .item_info .item_text input, .item_info .item_text .account-section select, .account-section .item_info .item_text select, .item_info .item_text .account-section option, .account-section .item_info .item_text option, .item_info .item_text .table_property th, .item_info .table_property .item_text th, .item_info .item_text .table_property td, .item_info .table_property .item_text td, .item_info .item_text .card, .item_info .item_text .contact-form input, .contact-form .item_info .item_text input, .item_info .item_text .contact-form select, .contact-form .item_info .item_text select, .item_info .item_text .contact-form textarea, .contact-form .item_info .item_text textarea, .item_info .item_text .cart-section .cart-item .quantity #value, .cart-section .cart-item .quantity .item_info .item_text #value, .item_info .item_text .cart-buttons .promo, .cart-buttons .item_info .item_text .promo, .item_info .item_text .how_make .make_txt p, .how_make .make_txt .item_info .item_text p {
   color: black;
   font-size: 16px;
 }
@@ -726,15 +768,28 @@ h1 {
   cursor: pointer !important;
 }
 
+.account-section #h2 {
+  font-size: 25px !important;
+}
+.account-section p, .account-section span, .account-section a, .account-section th, .account-section td, .account-section input, .account-section select, .account-section option {
+  color: black;
+  font-size: 18px;
+}
+.account-section .button-delete {
+  font-size: 14px !important;
+  background-color: red !important;
+}
+.account-section table {
+  margin-bottom: 0 !important;
+}
 .account-section .acc-img:hover {
   cursor: pointer;
 }
-
-.acc-info h2 {
+.account-section .acc-info h2 {
   font-size: 25px;
   margin-bottom: 15px;
 }
-.acc-info p, .acc-info span {
+.account-section .acc-info p, .account-section .acc-info span {
   font-family: "Amiko", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -742,8 +797,48 @@ h1 {
   font-size: 18px;
   color: black;
 }
+.account-section .acc-images img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.account-section .acc-images .remove-img {
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+.account-section .acc-images .remove-img a {
+  position: absolute;
+}
+.account-section .acc-images .remove-img a img {
+  height: 18px;
+  width: 18px;
+}
+.account-section button, .account-section .button-delete {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  height: 35px;
+  padding: 0 15px;
+  width: 100%;
+  border: unset;
+}
+.account-section button:hover, .account-section .button-delete:hover {
+  border: unset;
+  cursor: pointer;
+  background-color: #808080;
+  color: white;
+  transition: 0.2s;
+}
+
 .article-card {
-  height: 360px;
+  height: 390px;
 }
 .article-card .article-img {
   background-color: #BCB5A6;
@@ -763,6 +858,20 @@ h1 {
   background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.article-card .article-body > p {
+  height: 105px;
+  position: relative;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  overflow: hidden !important;
+}
+
+.movement p:first-child, .movement .slogan {
+  font-size: 22px !important;
+}
+.movement .slogan {
+  text-transform: uppercase !important;
 }
 
 footer {

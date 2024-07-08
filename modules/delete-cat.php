@@ -7,4 +7,4 @@ $idItems = (int)$idItem;
 echo $idItems;
 $conn -> query("DELETE FROM `categories` WHERE `cat_id` = '$idItems'");
 
-header("Location: /pages/catalog.php");
+header("Location: ".$_SERVER['HTTP_REFERER']);

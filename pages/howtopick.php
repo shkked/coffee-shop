@@ -10,6 +10,11 @@
     <?php include ("../modules/header.php"); ?>
     <main>
         <div class="container-user how_make">
+        <?php 
+            $pagetitle = ["Как выбрать кофе?"];
+            $pageurl = ["/pages/howtopick.php"];
+            include ("../modules/breadcrumbs.php"); 
+            ?>
             <section class="catalog">
                 <h1 class="text-start text-black nav-link-font h2-title">Как выбрать кофе?</h1>
                 <div class="d-flex">

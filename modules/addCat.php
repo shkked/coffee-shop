@@ -13,4 +13,4 @@ echo $imgItem;
 $conn -> query("INSERT INTO `categories` (`cat_name`, `cat_img`) VALUES ('$nameItem', '$imgItem')");
 $conn -> close();
 
-header('Location: /pages/catalog.php');
+header('Location: /pages/account.php');

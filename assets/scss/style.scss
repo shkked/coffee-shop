@@ -6,15 +6,15 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    .admin-btn{
+    // .admin-btn{
         
-    }
+    // }
 }
 main{
     min-height: calc(100vh - 356px) !important;
 }
 .container-user{
-    max-width: 1000px;
+    max-width: 1200px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -27,6 +27,9 @@ main{
 }
 .rounded{
     border-radius: 10px !important;
+}
+.ps-8{
+    padding-left: 120px !important;
 }
 // Charter Bold Italic
 @font-face {
@@ -68,6 +71,25 @@ main{
     &:hover{
         background: white;
         color: black;
+    }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-btn{
+    border-radius: 10px;
+    background: white;
+    color: black;
+    border: 1px solid black !important;
+    width: 110px;
+    height: 38px;
+    @extend .sub-header-font;
+    &:hover{
+        background: black;
+        color: white;
     }
 }
 .fav-btn{
@@ -166,6 +188,9 @@ header{
         height: 88px;
 
     }
+    #h5{
+        font-size: 32px !important;
+    }
 }
 .info-left, .info-right{
     // width: 48%;
@@ -196,7 +221,7 @@ h1{
     text-align: center;
 }
 .card{
-    height: 670px;
+    height: 690px;
     @extend .amiko-font;
     color: black;
     .admin-delete{
@@ -414,12 +439,13 @@ h1{
     }
     button:not(.btn-close){
         padding: 10px 15px;
-        width: 200px;
+        // width: 200px;
         background-color: black;
         color: white;
         border-radius: 10px;
         border: none;
         @extend .sub-header-font;
+        
     }
 
 }
@@ -458,7 +484,7 @@ h1{
             font-size: 24px;
             text-align: left;
             margin-bottom: 48px;
-            margin-top: 48px;
+            margin-top: 0;
         }
         .active-category{
             background-color: black;
@@ -639,17 +665,20 @@ h1{
             cursor: pointer;
             position: absolute;
             width: auto;
+            right: 0;
+            top: 10px;
+            // left: 0;
             img{
-                position: relative;
-                top: -80px;
-                left: 915px;
+                // position: relative;
+                right: 0;
+                // right: -30px;
                 width: 18px;
                 height: 18px;
             }
         }
         .cart-img-top{
-            width: 150px;
-            height: 150px;
+            // width: 150px;
+            // height: 150px;
             @extend .pointer;
         }
         .article{
@@ -672,6 +701,9 @@ h1{
             }
         }
     }   
+}
+.cart-total{
+    // word-break: keep-all;
 }
 .cart-buttons{
     .promo{
@@ -781,31 +813,114 @@ h1{
     }
 }
 .account-section{
+    #h2{
+        font-size: 25px !important; 
+    }
+    p, span, a, th, td, input, select, option{
+        @extend .amiko-font;
+        color: black;
+        font-size: 18px;
+    }
+    .button-delete{
+        font-size: 14px !important; 
+        background-color: red !important;
+    }
+    table{
+        margin-bottom: 0 !important;
+    }
     .acc-img:hover{
         cursor: pointer;
     }
+    .acc-info{
+        h2{
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        p, span{
+            font-family: 'Amiko', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-size: 18px;
+            color: black;
+        }
+        a{
+            // @extend .amiko-font;
+            // color: black;
+            // font-size: 18px;
+        }
+    }
+    .acc-images{
+        img{
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        div{
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // flex-direction: column;
+        }
+        .remove-img{
+            cursor: pointer;
+            position: relative;
+            top: 5px;
+            right: 5px;
+            a{
+                position: absolute;
+                img{
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+    button, .button-delete{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend .amiko-font;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        height: 35px;
+        padding: 0 15px;
+        width: 100%;
+        border: unset;
+        &:hover{
+            border: unset;
+            cursor: pointer;
+            background-color: #808080;
+            color: white;
+            transition: 0.2s;
+        }
+    }
 }
-.acc-info{
-    h2{
-        font-size: 25px;
-        margin-bottom: 15px;
-    }
-    p, span{
-        font-family: 'Amiko', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        font-size: 18px;
-        color: black;
-    }
-    a{
-        // @extend .amiko-font;
-        // color: black;
-        // font-size: 18px;
-    }
-}
+// .acc-info{
+//     h2{
+//         font-size: 25px;
+//         margin-bottom: 15px;
+//     }
+//     p, span{
+//         font-family: 'Amiko', sans-serif;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//         font-size: 18px;
+//         color: black;
+//     }
+//     a{
+//         // @extend .amiko-font;
+//         // color: black;
+//         // font-size: 18px;
+//     }
+// }
+
 .article-card{
-    height: 360px;
+    height: 390px;
     .article-img{
         background-color: #BCB5A6; 
         border-top-left-radius: 10px; 
@@ -824,7 +939,22 @@ h1{
         background-color: white; 
         border-bottom-left-radius: 10px; 
         border-bottom-right-radius: 10px;
+        &>p{
+            height: 105px;
+            position: relative;
+            hyphens: auto;
+            overflow: hidden !important;
+        }
     }
+}
+.movement{
+    p:first-child, .slogan  {
+        font-size: 22px !important;
+    }
+    .slogan{
+        text-transform: uppercase !important;
+    }
+
 }
 footer{
     // height: 356px;
